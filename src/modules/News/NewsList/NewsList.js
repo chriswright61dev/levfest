@@ -1,11 +1,26 @@
 import React, { useContext } from "react";
 import { MainDataContext } from "../../../data/MainDataContext";
+import NewsCard from "../../../components/NewsCard/NewsCard";
 function NewsList() {
-  const state = useContext(MainDataContext);
-  console.log("state", state);
   const news = useContext(MainDataContext).mainState.newsListData;
-  console.log("news", news);
-  return <div>news list - an array of objects</div>;
+
+  return (
+    <div className="news">
+      news list here - map array
+      {news.map((newsitem) => {
+        return (
+          <NewsCard
+            key={newsitem.id}
+            id={newsitem.id}
+            link={"news"}
+            title={newsitem.title}
+            introduction={newsitem.news_introduction}
+            image_1={newsitem.news_image_1}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
 export default NewsList;
