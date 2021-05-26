@@ -7,12 +7,14 @@ const thisyear = new Date().getFullYear();
 // get data from these urls
 const mainApiListsURLs = {
   // api urls object
-  venuesList: "http://www.levenshulmecommunityfestival.co.uk/api_venues_list",
+  venuesList:
+    "http://www.levenshulmecommunityfestival.co.uk/api_levfest_venues_list ",
   eventsList:
     "http://www.levenshulmecommunityfestival.co.uk/api_levfest_events_list/" +
     thisyear,
 
-  newsList: "http://www.levenshulmecommunityfestival.co.uk/api_news_list",
+  newsList:
+    "http://www.levenshulmecommunityfestival.co.uk/api_levfest_news_list",
 };
 
 function MainDataContextProvider(props) {
@@ -45,9 +47,7 @@ function MainDataContextProvider(props) {
   }
 
   useEffect(() => {
-    fetchListData(
-      "http://www.levenshulmecommunityfestival.co.uk/api_news_list"
-    );
+    fetchListData("newsList", mainApiListsURLs, dispatch);
   }, []);
 
   return (
