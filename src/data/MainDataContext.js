@@ -1,6 +1,20 @@
 import React, { createContext, useEffect, useReducer } from "react";
+import { fetchListData } from "../utilities/utilities";
 
 export const MainDataContext = createContext();
+
+const thisyear = new Date().getFullYear();
+// get data from these urls
+const mainApiListsURLs = {
+  // api urls object
+  venuesList: "http://www.levenshulmecommunityfestival.co.uk/api_venues_list",
+  eventsList:
+    "http://www.levenshulmecommunityfestival.co.uk/api_levfest_events_list/" +
+    thisyear,
+
+  newsList: "http://www.levenshulmecommunityfestival.co.uk/api_news_list",
+};
+
 function MainDataContextProvider(props) {
   const initialState = {
     venuesListLoaded: false,
@@ -19,19 +33,22 @@ function MainDataContextProvider(props) {
 
   const [mainState, dispatch] = useReducer(reducerfn, initialState);
 
-  function reducerfn(mainState, action) {}
+  function reducerfn(mainState, action) {
+    switch (action.type) {
+      case "ADD_NEWS_LIST_DATA": {
+        return { ...mainState, newsListData: action.value };
+      }
+      default: {
+        return { ...mainState };
+      }
+    }
+  }
 
-  const thisyear = new Date().getFullYear();
-  // get data from these urls
-  const mainApiListsURLs = {
-    // api urls object
-    venuesList: "http://www.levenshulmecommunityfestival.co.uk/api_venues_list",
-    eventsList:
-      "http://www.levenshulmecommunityfestival.co.uk/api_levfest_events_list/" +
-      thisyear,
-
-    newsList: "http://www.levenshulmecommunityfestival.co.uk/api_news_list",
-  };
+  useEffect(() => {
+    fetchListData(
+      "http://www.levenshulmecommunityfestival.co.uk/api_news_list"
+    );
+  }, []);
 
   return (
     <MainDataContext.Provider value={mainState}>
