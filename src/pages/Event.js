@@ -1,7 +1,6 @@
-import React from "react";
-
+import EventDetails from "../modules/Events/EventDetails/EventDetails";
 function Event() {
-  return <div>an event - detail</div>;
+  return <EventDetails />;
 }
 
 export default Event;
