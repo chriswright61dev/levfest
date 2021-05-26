@@ -54,6 +54,20 @@ function MainDataContextProvider(props) {
         };
       }
 
+      case "ADD_EVENT_DATA": {
+        const eventdata = mainState.eventsLongData;
+        const newData = action.value;
+        const used = eventdata.some((event) => event["id"] === newData.id);
+        if (used) {
+          // already exists so don't add data
+          return { ...mainState };
+        } else {
+          // add data
+          eventdata.push(action.value);
+          return { ...mainState, eventsLongData: eventdata };
+        }
+      }
+
       default: {
         return { ...mainState };
       }

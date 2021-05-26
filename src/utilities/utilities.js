@@ -1,3 +1,29 @@
+export function fetchSingleData(parametersObject) {
+  fetch(parametersObject.url)
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Something went wrong");
+      }
+    })
+    .then((loadedData) => {
+      // update main state
+      parametersObject.dispatchFunction({
+        type: parametersObject.dispatchName,
+        value: loadedData[0],
+      });
+      // update local display state
+      parametersObject.setState({
+        displayData: loadedData,
+      });
+    })
+
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
 export function fetchListData(dataName, urlList, dispatch) {
   //fetches the short data
   const url = urlList[dataName]; // key in the api list object

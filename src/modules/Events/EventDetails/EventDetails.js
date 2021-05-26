@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MainDataContext } from "../../../data/MainDataContext";
-
+import { fetchSingleData } from "../../../utilities/utilities";
 import { useParams } from "react-router-dom";
 import EventDetail from "./EventDetail/EventDetail.js";
 
@@ -19,6 +19,16 @@ function EventDetails(props) {
     // have we looked at this data before
     // if so use that
     // else fetch the data
+
+    // too many parameters so pass an object
+    const fetchParametersObject = {
+      url: baseUrl + apiUrl + id,
+      setState: setEventState,
+      dispatchFunction: dispatcher,
+      dispatchName: "ADD_EVENT_DATA",
+    };
+
+    fetchSingleData(fetchParametersObject);
   }, [id]);
   //rerun useEffect if a new event id is selected
 
@@ -26,8 +36,8 @@ function EventDetails(props) {
   // starts as an empty array
   if (eventData.length > 0) {
     // so keep it as an array - has only one element
-
-    return <EventDetail data={eventData[0]} />;
+    const oldEvent = false;
+    return <EventDetail old={oldEvent} data={eventData[0]} />;
   } else {
     return "loading";
   }
