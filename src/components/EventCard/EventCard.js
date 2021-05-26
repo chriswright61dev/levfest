@@ -6,11 +6,16 @@ import DateTime from "../DateTime/DateTime";
 function EventCard(props) {
   return (
     <div className="event_card">
-      <div className="event_card__text">
+      <div className="event_card__text_top">
         <Link to={`/${props.link}/${props.id}`}>
-          <h4> {props.title}</h4>
-        </Link>
+          <h2> {props.title}</h2>
+        </Link>{" "}
+      </div>
+      <div className="event_card__text_middle">
         <DateTime date={props.date} />
+      </div>
+
+      <div className="event_card__text_bottom">
         <p> {props.venue}</p>
         <p> {props.introduction}</p>
         <p>
