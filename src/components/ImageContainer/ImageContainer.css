@@ -1,6 +1,6 @@
 .square {
   position: relative;
-  background: red;
+  /* background: red; */
   max-width: 300px;
 }
 
