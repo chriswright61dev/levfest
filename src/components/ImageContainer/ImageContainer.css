@@ -1,0 +1,19 @@
+.square {
+  position: relative;
+  background: red;
+  max-width: 250px;
+}
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.square img {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

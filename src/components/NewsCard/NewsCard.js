@@ -9,11 +9,13 @@ function NewsCard(props) {
         <div className="news_card__text">
           <h2> {props.title}</h2>
           <p> {props.introduction}</p>
-        </div>{" "}
-        <div>
-          image here source={props.image_1}
-          altText={props.title}
         </div>
+        <ImageContainer
+          type="square"
+          source={props.image_1}
+          altText={props.title}
+        />
+
         <p> {props.id}</p>
       </Link>
     </div>
