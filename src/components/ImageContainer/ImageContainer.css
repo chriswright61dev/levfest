@@ -1,7 +1,7 @@
 .square {
   position: relative;
   background: red;
-  max-width: 250px;
+  max-width: 300px;
 }
 
 .square:after {

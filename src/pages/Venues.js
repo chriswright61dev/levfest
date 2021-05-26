@@ -1,7 +1,8 @@
 import React from "react";
 
+import VenueList from "../modules/Venues/VenueList/VenueList";
 function Venues() {
-  return <div>venue list</div>;
+  return <VenueList />;
 }
 
 export default Venues;
