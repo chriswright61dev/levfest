@@ -1,0 +1,10 @@
+.event_card {
+  width: 300px;
+  margin: 1rem;
+}
+
+.event_card__text {
+  background-color: yellow;
+  min-height: 220px;
+  /* max-height: 400px; */
+}
