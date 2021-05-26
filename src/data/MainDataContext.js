@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useReducer } from "react";
-import { fetchListData } from "../utilities/utilities";
+import { feedCounter, fetchListData } from "../utilities/utilities";
 
 export const MainDataContext = createContext();
 
@@ -40,11 +40,37 @@ function MainDataContextProvider(props) {
       case "ADD_NEWS_LIST_DATA": {
         return { ...mainState, newsListData: action.value };
       }
+
+      case "ADD_VENUES_LIST_DATA": {
+        return { ...mainState, venuesListData: action.value };
+      }
+      case "ADD_EVENTS_LIST_DATA": {
+        return { ...mainState, eventsListData: action.value };
+      }
+      case "FEEDS_COUNTED": {
+        return {
+          ...mainState,
+          feedsCount: action.value,
+        };
+      }
+
       default: {
         return { ...mainState };
       }
     }
   }
+
+  useEffect(() => {
+    feedCounter(mainApiListsURLs, dispatch);
+  }, []);
+
+  useEffect(() => {
+    fetchListData("venuesList", mainApiListsURLs, dispatch);
+  }, []);
+
+  useEffect(() => {
+    fetchListData("eventsList", mainApiListsURLs, dispatch);
+  }, []);
 
   useEffect(() => {
     fetchListData("newsList", mainApiListsURLs, dispatch);
