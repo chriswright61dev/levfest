@@ -15,7 +15,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        {" "}
         <Header />
         <Switch>
           <Route path="/" exact>
@@ -42,7 +41,7 @@ function App() {
           <Route path="/venues/:id" exact>
             <Venue />
           </Route>
-        </Switch>{" "}
+        </Switch>
         <Footer />
       </Router>
     </div>
