@@ -77,7 +77,7 @@ function MainDataContextProvider(props) {
   }, []);
 
   return (
-    <MainDataContext.Provider value={mainState}>
+    <MainDataContext.Provider value={{ mainState, dispatch }}>
       {props.children}
     </MainDataContext.Provider>
   );
