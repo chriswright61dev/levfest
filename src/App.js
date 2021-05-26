@@ -1,7 +1,8 @@
 import "./App.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 import Home from "./pages/Home";
 import Events from "./pages/Events";
 import Event from "./pages/Event";
@@ -14,6 +15,8 @@ function App() {
   return (
     <div className="App">
       <Router>
+        {" "}
+        <Header />
         <Switch>
           <Route path="/" exact>
             <Home />
@@ -39,7 +42,8 @@ function App() {
           <Route path="/venues/:id" exact>
             <Venue />
           </Route>
-        </Switch>
+        </Switch>{" "}
+        <Footer />
       </Router>
     </div>
   );
