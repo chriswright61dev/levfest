@@ -9,7 +9,7 @@ import EmailLink from "../../../../components/EmailLink/EmailLink";
 import GMap from "../../../../components/GMap/GMap";
 import GStreetView from "../../../../components/GStreetView/GStreetView";
 
-// import EventsAtVenue from "../../../Events/EventsAtVenue/EventsAtVenue";
+import EventsAtVenue from "../../../Events/EventsAtVenue/EventsAtVenue";
 
 import "./VenueDetail.css";
 
@@ -40,8 +40,8 @@ function VenueDetail(props) {
         </div>
         <div className="venue_events">
           <h4>Events at {vs.venue_title}</h4>
-          make a list of the events at this venue
-          {/* <EventsAtVenue venue_id={vs.venue_id} /> */}
+
+          <EventsAtVenue venue_id={vs.venue_id} />
         </div>
         <div className="venue_images">
           {vs.venue_gstreet_latitude ? (
