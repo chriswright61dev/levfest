@@ -2,7 +2,6 @@
 
 import ImageContainer from "../../../../components/ImageContainer/ImageContainer";
 
-// make some components
 import WebsiteLink from "../../../../components/WebsiteLink/WebsiteLink";
 import EmailLink from "../../../../components/EmailLink/EmailLink";
 
