@@ -1,0 +1,12 @@
+.news_detail {
+  display: flex;
+}
+.news_detail_text {
+  background: rgb(186, 179, 223);
+  min-width: 50%;
+}
+
+.news_detail_images {
+  background: rgb(236, 247, 138);
+  width: 30%;
+}
