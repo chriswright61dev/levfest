@@ -1,7 +1,6 @@
-import React from "react";
-
-function EventsOld() {
-  return <div>events from previous years</div>;
+import EventsOldList from "../modules/Events/EventsOldList/EventsOldList";
+function eventsOld() {
+  return <EventsOldList />;
 }
 
-export default EventsOld;
+export default eventsOld;

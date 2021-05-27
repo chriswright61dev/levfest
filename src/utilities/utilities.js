@@ -14,11 +14,66 @@ export function isParameterUsed(arrayName, objectKeyname, parameter) {
   );
 }
 
+export function indexOfYearData(dataArray, keyname) {
+  let foundindex = -1;
+  for (let index = 0; index < dataArray.length; index++) {
+    let keysindex = Object.keys(dataArray[index]).indexOf(keyname);
+    if (keysindex === 0) {
+      foundindex = index;
+    }
+  }
+  return foundindex;
+}
+
 export function getExistingData(dataArray, id) {
   const dataIndex = findIndexInArray(dataArray, "id", id);
   let displayData = [];
   displayData.push(dataArray[dataIndex]);
   return displayData;
+}
+
+export function fetchOldListData(
+  dataName,
+  baseurl,
+  year,
+  dispatch,
+  setTheState
+) {
+  const url = baseurl + year;
+  const dispatchDataName = "ADD_" + dataName.toUpperCase() + "_DATA";
+  const dispatchLoadedName = dataName.toUpperCase() + "_DATA_LOADED";
+  console.log("dispatchDataName", dispatchDataName);
+  fetch(url)
+    .then((res) => res.json())
+    .then((loadedData) => {
+      console.log("old data loadedData", loadedData);
+      // is there actual data?
+      if (loadedData.length > 0) {
+        dispatch({ type: dispatchDataName, value: loadedData });
+        dispatch({ type: dispatchLoadedName });
+        // update local display state
+        setTheState({
+          displayData: loadedData,
+        });
+      } else {
+        // no data received for that year
+        console.log("loadedData is empty", loadedData);
+        let nodata_array = [];
+        let nodata = { event_year: year };
+        console.log("nodata", nodata);
+        console.log("nodata.event_year", nodata.event_year);
+        // nodata.event_year.hasData = false;
+        // console.log("nodata", nodata);
+        nodata_array.push(nodata);
+        console.log("nodata_array", nodata_array);
+        // const year = action.value[0].event_year;
+
+        dispatch({ type: dispatchDataName, value: nodata_array });
+        setTheState({
+          displayData: loadedData,
+        });
+      }
+    });
 }
 
 export function fetchSingleData(parametersObject) {

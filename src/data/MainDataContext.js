@@ -1,5 +1,9 @@
 import React, { createContext, useEffect, useReducer } from "react";
-import { feedCounter, fetchListData } from "../utilities/utilities";
+import {
+  feedCounter,
+  fetchListData,
+  indexOfYearData,
+} from "../utilities/utilities";
 
 export const MainDataContext = createContext();
 
@@ -118,6 +122,42 @@ function MainDataContextProvider(props) {
           // add data
           eventdata.push(action.value);
           return { ...mainState, eventsLongData: eventdata };
+        }
+      }
+
+      case "ADD_EVENTS_LIST_OLD_DATA": {
+        // check if action.value has data
+        const hasData = action.value;
+        console.log("reducer hasData", hasData);
+        if (hasData) {
+          console.log("no old data received");
+          // this will trigger all the time while loading
+        }
+        const year = action.value[0].event_year;
+        console.log("year", year);
+        // this does not work if array is empty
+        // api shold say if empty?
+        // get it from state?
+
+        const keyname = "year" + year;
+        let oldEventsData = mainState.eventsListDataOld;
+        // check if there is no data
+        if (oldEventsData.length > 0) {
+          let yearIndex = indexOfYearData(oldEventsData, keyname);
+          if (yearIndex >= 0) {
+            // old data does contain the new data so don't do anything
+            return { ...mainState };
+          } else {
+            // old data does not contain the new data so add it
+            let yearobject = { [keyname]: action.value };
+            oldEventsData.push(yearobject);
+            return { ...mainState, eventsListDataOld: oldEventsData };
+          }
+        } else {
+          // no data exists at all so add it
+          let yearobject = { [keyname]: action.value };
+          oldEventsData.push(yearobject);
+          return { ...mainState, eventsListDataOld: oldEventsData };
         }
       }
 
