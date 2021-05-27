@@ -1,4 +1,28 @@
+export function findIndexInArray(arrayName, objectKeyName, keyValue) {
+  // find the index of a key value in an array of objects
+  return arrayName
+    .map(function (e) {
+      return e[objectKeyName];
+    })
+    .indexOf(keyValue);
+}
+
+export function isParameterUsed(arrayName, objectKeyname, parameter) {
+  // is a parameter present in an array of objects
+  return arrayName.some(
+    (objectName) => objectName[objectKeyname] === parameter
+  );
+}
+
+export function getExistingData(dataArray, id) {
+  const dataIndex = findIndexInArray(dataArray, "id", id);
+  let displayData = [];
+  displayData.push(dataArray[dataIndex]);
+  return displayData;
+}
+
 export function fetchSingleData(parametersObject) {
+  console.log("parametersObject.url", parametersObject.url);
   fetch(parametersObject.url)
     .then((response) => {
       if (response.ok) {

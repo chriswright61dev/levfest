@@ -9,7 +9,7 @@ function EventCard(props) {
       <div className="event_card__text_top">
         <Link to={`/${props.link}/${props.id}`}>
           <h2> {props.title}</h2>
-        </Link>{" "}
+        </Link>
       </div>
       <div className="event_card__text_middle">
         <DateTime date={props.date} />

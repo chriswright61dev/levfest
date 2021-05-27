@@ -1,6 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MainDataContext } from "../../../data/MainDataContext";
-import { fetchSingleData } from "../../../utilities/utilities";
+import {
+  fetchSingleData,
+  isParameterUsed,
+  getExistingData,
+} from "../../../utilities/utilities";
 import { useParams } from "react-router-dom";
 import EventDetail from "./EventDetail/EventDetail.js";
 
@@ -14,21 +18,31 @@ function EventDetails(props) {
   const longEventsData = useContext(MainDataContext).mainState.eventsLongData;
   const dispatcher = useContext(MainDataContext).dispatch;
   let { id } = useParams();
-
+  console.log("longEventsData", longEventsData);
+  console.log("id", id);
   useEffect(() => {
+    console.log(
+      "isParameterUsed(longEventsData",
+      isParameterUsed(longEventsData, "id", id)
+    );
     // have we looked at this data before
-    // if so use that
-    // else fetch the data
+    if (isParameterUsed(longEventsData, "id", id)) {
+      let displayData = getExistingData(longEventsData, id);
+      console.log("old data - displayData", displayData);
+      setEventState({
+        displayData: displayData,
+      });
+    } else {
+      console.log("get new detail data");
+      const fetchParametersObject = {
+        url: baseUrl + apiUrl + id,
+        setState: setEventState,
+        dispatchFunction: dispatcher,
+        dispatchName: "ADD_EVENT_DATA",
+      };
 
-    // too many parameters so pass an object
-    const fetchParametersObject = {
-      url: baseUrl + apiUrl + id,
-      setState: setEventState,
-      dispatchFunction: dispatcher,
-      dispatchName: "ADD_EVENT_DATA",
-    };
-
-    fetchSingleData(fetchParametersObject);
+      fetchSingleData(fetchParametersObject);
+    }
   }, [id]);
   //rerun useEffect if a new event id is selected
 
