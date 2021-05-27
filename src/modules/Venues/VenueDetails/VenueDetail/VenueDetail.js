@@ -40,7 +40,7 @@ function VenueDetail(props) {
         <div className="venue_events">
           <h4>Events at {vs.venue_title}</h4>
 
-          <EventsAtVenue venue_id={vs.venue_id} />
+          <EventsAtVenue venue_id={vs.id} />
         </div>
         <div className="venue_images">
           {vs.venue_gstreet_latitude ? (
