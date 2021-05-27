@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ImageContainer from "../ImageContainer/ImageContainer";
 function NewsCard(props) {
-  console.log("props in newscard", props);
+  // console.log("props in newscard", props);
   return (
     <div className="venue_card">
       <Link to={`/${props.link}/${props.id}`}>

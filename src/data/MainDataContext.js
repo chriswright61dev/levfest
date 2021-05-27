@@ -37,6 +37,37 @@ function MainDataContextProvider(props) {
 
   function reducerfn(mainState, action) {
     switch (action.type) {
+      case "FEEDS_COUNTED": {
+        return {
+          ...mainState,
+          feedsCount: action.value,
+        };
+      }
+
+      case "VENUES_LIST_DATA_LOADED": {
+        return {
+          ...mainState,
+          venuesListLoaded: true,
+          loadCount: mainState.loadCount + 1,
+        };
+      }
+
+      case "EVENTS_LIST_DATA_LOADED": {
+        return {
+          ...mainState,
+          eventsListLoaded: true,
+          loadCount: mainState.loadCount + 1,
+        };
+      }
+
+      case "NEWS_LIST_DATA_LOADED": {
+        return {
+          ...mainState,
+          newsListLoaded: true,
+          loadCount: mainState.loadCount + 1,
+        };
+      }
+
       case "ADD_NEWS_LIST_DATA": {
         return { ...mainState, newsListData: action.value };
       }
@@ -47,11 +78,33 @@ function MainDataContextProvider(props) {
       case "ADD_EVENTS_LIST_DATA": {
         return { ...mainState, eventsListData: action.value };
       }
-      case "FEEDS_COUNTED": {
-        return {
-          ...mainState,
-          feedsCount: action.value,
-        };
+
+      case "ADD_NEWS_DATA": {
+        const newsdata = mainState.newsLongData;
+        const newData = action.value;
+        const used = newsdata.some((news) => news["id"] === newData.id);
+        if (used) {
+          // already exists so don't add data
+          return { ...mainState };
+        } else {
+          // add data
+          newsdata.push(action.value);
+          return { ...mainState, newsLongData: newsdata };
+        }
+      }
+
+      case "ADD_VENUE_DATA": {
+        const venuedata = mainState.venuesLongData;
+        const newData = action.value;
+        const used = venuedata.some((venue) => venue["id"] === newData.id);
+        if (used) {
+          // already exists so don't add data
+          return { ...mainState };
+        } else {
+          // add data
+          venuedata.push(action.value);
+          return { ...mainState, venuesLongData: venuedata };
+        }
       }
 
       case "ADD_EVENT_DATA": {

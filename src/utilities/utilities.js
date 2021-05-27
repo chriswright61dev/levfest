@@ -58,7 +58,10 @@ export function fetchListData(dataName, urlList, dispatch) {
     .then((res) => res.json())
     .then((loadedData) => {
       dispatch({ type: dispatchDataName, value: loadedData });
+      console.log("loadedData", loadedData);
+      console.log("dispatchDataName", dispatchDataName);
       dispatch({ type: dispatchLoadedName });
+      console.log("dispatchLoadedName", dispatchLoadedName);
     });
 }
 
@@ -76,6 +79,15 @@ export function countProperties(obj) {
 export function feedCounter(feedList, dispatch) {
   const feedcount = countProperties(feedList);
   dispatch({ type: "FEEDS_COUNTED", value: feedcount });
+}
+
+export function hasDatePassed(date) {
+  let HasEventPassed = false;
+  const now = new Date();
+  if (Date.parse(now) > Date.parse(date)) {
+    HasEventPassed = true;
+  }
+  return HasEventPassed;
 }
 
 export function DateFormat(dateTimeString) {

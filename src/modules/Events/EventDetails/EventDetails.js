@@ -4,6 +4,7 @@ import {
   fetchSingleData,
   isParameterUsed,
   getExistingData,
+  hasDatePassed,
 } from "../../../utilities/utilities";
 import { useParams } from "react-router-dom";
 import EventDetail from "./EventDetail/EventDetail.js";
@@ -18,22 +19,14 @@ function EventDetails(props) {
   const longEventsData = useContext(MainDataContext).mainState.eventsLongData;
   const dispatcher = useContext(MainDataContext).dispatch;
   let { id } = useParams();
-  console.log("longEventsData", longEventsData);
-  console.log("id", id);
   useEffect(() => {
-    console.log(
-      "isParameterUsed(longEventsData",
-      isParameterUsed(longEventsData, "id", id)
-    );
     // have we looked at this data before
     if (isParameterUsed(longEventsData, "id", id)) {
       let displayData = getExistingData(longEventsData, id);
-      console.log("old data - displayData", displayData);
       setEventState({
         displayData: displayData,
       });
     } else {
-      console.log("get new detail data");
       const fetchParametersObject = {
         url: baseUrl + apiUrl + id,
         setState: setEventState,
@@ -50,8 +43,9 @@ function EventDetails(props) {
   // starts as an empty array
   if (eventData.length > 0) {
     // so keep it as an array - has only one element
-    const oldEvent = false;
-    return <EventDetail old={oldEvent} data={eventData[0]} />;
+
+    const HasEventPassed = hasDatePassed(eventData.event_date);
+    return <EventDetail old={HasEventPassed} data={eventData[0]} />;
   } else {
     return "loading";
   }
