@@ -32,44 +32,43 @@ export function getExistingData(dataArray, id) {
   return displayData;
 }
 
-export function fetchOldListData(
-  dataName,
-  baseurl,
-  year,
-  dispatch,
-  setTheState
-) {
-  const url = baseurl + year;
-  const dispatchDataName = "ADD_" + dataName.toUpperCase() + "_DATA";
-  const dispatchLoadedName = dataName.toUpperCase() + "_DATA_LOADED";
-  console.log("dispatchDataName", dispatchDataName);
+export function fetchOldListData(fParam) {
+  // pass in fParam - a parameters object
+  const url = fParam.baseurl + fParam.year;
+  const dispatchDataName = "ADD_" + fParam.dataName.toUpperCase() + "_DATA";
+  const dispatchLoadedName = fParam.dataName.toUpperCase() + "_DATA_LOADED";
   fetch(url)
     .then((res) => res.json())
     .then((loadedData) => {
-      console.log("old data loadedData", loadedData);
-      // is there actual data?
       if (loadedData.length > 0) {
-        dispatch({ type: dispatchDataName, value: loadedData });
-        dispatch({ type: dispatchLoadedName });
+        fParam.dispatch({
+          type: "SET_YEAR",
+          value: fParam.year,
+        });
+        fParam.dispatch({
+          type: dispatchDataName,
+          value: loadedData,
+        });
+        fParam.dispatch({ type: dispatchLoadedName });
         // update local display state
-        setTheState({
+        fParam.setTheState({
           displayData: loadedData,
         });
       } else {
-        // no data received for that year
-        console.log("loadedData is empty", loadedData);
+        fParam.dispatch({
+          type: "SET_YEAR",
+          value: fParam.year,
+        });
+        // no data received for that year so make a result up
+        console.log("loadedData is empty - adding blank for year", loadedData); // []
         let nodata_array = [];
-        let nodata = { event_year: year };
-        console.log("nodata", nodata);
-        console.log("nodata.event_year", nodata.event_year);
-        // nodata.event_year.hasData = false;
-        // console.log("nodata", nodata);
+        let nodata = { event_year: fParam.year };
         nodata_array.push(nodata);
-        console.log("nodata_array", nodata_array);
-        // const year = action.value[0].event_year;
-
-        dispatch({ type: dispatchDataName, value: nodata_array });
-        setTheState({
+        fParam.dispatch({
+          type: dispatchDataName,
+          value: nodata_array,
+        });
+        fParam.setTheState({
           displayData: loadedData,
         });
       }
@@ -77,7 +76,6 @@ export function fetchOldListData(
 }
 
 export function fetchSingleData(parametersObject) {
-  console.log("parametersObject.url", parametersObject.url);
   fetch(parametersObject.url)
     .then((response) => {
       if (response.ok) {
@@ -113,10 +111,7 @@ export function fetchListData(dataName, urlList, dispatch) {
     .then((res) => res.json())
     .then((loadedData) => {
       dispatch({ type: dispatchDataName, value: loadedData });
-      console.log("loadedData", loadedData);
-      console.log("dispatchDataName", dispatchDataName);
       dispatch({ type: dispatchLoadedName });
-      console.log("dispatchLoadedName", dispatchLoadedName);
     });
 }
 

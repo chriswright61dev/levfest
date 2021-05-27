@@ -10,30 +10,31 @@ import {
 function EventsOldList() {
   // listing data from previous years
 
+  // the year we are looking at
   const [eventYearState, setEventYearState] = useState({
     year: "2020",
   });
 
   const [oldEventState, setOldEventState] = useState({
-    loading: false,
     displayData: [],
   });
 
+  // change year state from select box
   function handleYearChange(event) {
     setEventYearState({
       year: event.target.value,
     });
   }
 
-  const year = eventYearState.year;
-  let keyname = "year" + year;
+  // const year = eventYearState.year;
+  let keyname = "year" + eventYearState.year;
   const baseUrl = "http://www.levenshulmecommunityfestival.co.uk/";
   const apiUrl = "api_levfest_events_list/";
 
   const oldEventsListData =
     useContext(MainDataContext).mainState.eventsListDataOld;
   const dispatcher = useContext(MainDataContext).dispatch;
-
+  // console.log("oldEventsListData", oldEventsListData);
   const url = baseUrl + apiUrl;
 
   useEffect(() => {
@@ -41,18 +42,30 @@ function EventsOldList() {
 
     if (yearIndex >= 0) {
       //   data already exists
-      let displayData = oldEventsListData[yearIndex][keyname];
-      setOldEventState({
-        displayData: displayData,
-      });
+      let savedDisplayData = oldEventsListData[yearIndex][keyname];
+      console.log("savedDisplayData", savedDisplayData);
+
+      if (savedDisplayData[0].id) {
+        // savedDisplayData is valid data
+        setOldEventState({
+          displayData: savedDisplayData,
+        });
+      } else {
+        // savedDisplayData is NOT valid data
+        setOldEventState({
+          displayData: [],
+        });
+      }
     } else {
-      fetchOldListData(
-        "EVENTS_LIST_OLD",
-        url,
-        year,
-        dispatcher,
-        setOldEventState
-      );
+      const fetchParametersObject = {
+        dataName: "EVENTS_LIST_OLD",
+        baseurl: url,
+        year: eventYearState.year,
+        dispatch: dispatcher,
+        setTheState: setOldEventState,
+      };
+
+      fetchOldListData(fetchParametersObject);
     }
   }, [eventYearState.year]);
   // console.log("oldEventState in component", oldEventState);
@@ -64,7 +77,7 @@ function EventsOldList() {
         <option value="2019">2019</option>
         {/* there is no data for 2019 */}
       </select>
-      old events list from {year}
+      old events list from {eventYearState.year}
       <EventsOldListDisplay events={oldEventState.displayData} />
     </div>
   );

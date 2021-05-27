@@ -35,6 +35,7 @@ function MainDataContextProvider(props) {
     eventsLongData: [],
     newsListData: [],
     newsLongData: [],
+    year: thisyear,
   };
 
   const [mainState, dispatch] = useReducer(reducerfn, initialState);
@@ -45,6 +46,13 @@ function MainDataContextProvider(props) {
         return {
           ...mainState,
           feedsCount: action.value,
+        };
+      }
+
+      case "SET_YEAR": {
+        return {
+          ...mainState,
+          year: action.value,
         };
       }
 
@@ -127,22 +135,14 @@ function MainDataContextProvider(props) {
 
       case "ADD_EVENTS_LIST_OLD_DATA": {
         // check if action.value has data
-        const hasData = action.value;
-        console.log("reducer hasData", hasData);
-        if (hasData) {
-          console.log("no old data received");
-          // this will trigger all the time while loading
-        }
-        const year = action.value[0].event_year;
-        console.log("year", year);
-        // this does not work if array is empty
-        // api shold say if empty?
-        // get it from state?
-
+        const year = mainState.year;
+        console.log("year in reducer", year);
+        // get this from state
         const keyname = "year" + year;
         let oldEventsData = mainState.eventsListDataOld;
         // check if there is no data
         if (oldEventsData.length > 0) {
+          // old data exists - is the current year in it
           let yearIndex = indexOfYearData(oldEventsData, keyname);
           if (yearIndex >= 0) {
             // old data does contain the new data so don't do anything
