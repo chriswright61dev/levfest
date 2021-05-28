@@ -1,7 +1,7 @@
 import React from "react";
-
+import FrontPage from "../modules/FrontPage/FrontPage";
 function Home() {
-  return <div>home page</div>;
+  return <FrontPage />;
 }
 
 export default Home;
