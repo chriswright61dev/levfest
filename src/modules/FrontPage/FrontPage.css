@@ -1,4 +1,13 @@
 .front_page {
   display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  align-items: center;
+}
+
+.front_page__cards {
+  width: 100vw;
+  display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }

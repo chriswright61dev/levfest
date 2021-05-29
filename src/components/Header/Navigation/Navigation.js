@@ -10,18 +10,20 @@ function Navigation() {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <Link to="/news">News</Link>
-        </li>
+
         <li>
           <Link to="/events">What's On</Link>
         </li>
         <li>
           <Link to="/venues">Venues</Link>
         </li>
-        <li>
+
+        {/* <li>
+          <Link to="/news">News</Link>
+        </li> */}
+        {/* <li>
           <Link to="/events_old">What was on</Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
