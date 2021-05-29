@@ -16,6 +16,7 @@ function FrontPage() {
 
       <FrontPageCard
         title="What's Happening"
+        text=" What's going on now"
         link="/news"
         IMGsource={boxbg}
         IMGaltText="alt text is - What's going on now"
@@ -24,6 +25,7 @@ function FrontPage() {
 
       <FrontPageCard
         title="Where is it happening"
+        text=" What's On Where"
         link="/venues"
         IMGsource={boxbg}
         IMGaltText="alt text is - What's On Where"
@@ -32,6 +34,7 @@ function FrontPage() {
 
       <FrontPageCard
         title="What's Happened Before "
+        text=" probably does not need a front page box"
         link="/events_old"
         IMGsource={boxbg}
         IMGaltText="alt text is - probably does not need a front page box  "
