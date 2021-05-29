@@ -4,7 +4,7 @@ import boxbg from "../../images/boxbg.jpg";
 import herobg from "../../images/hero1.jpg";
 import "./FrontPage.css";
 import HeroContainer from "../../components/HeroContainer/HeroContainer";
-import FrontPageCard from "../../components/FrontPageCard/FrontPageCard";
+import FrontPageCard from "../../components/Cards/FrontPageCard/FrontPageCard";
 function FrontPage() {
   return (
     <div className="front_page">

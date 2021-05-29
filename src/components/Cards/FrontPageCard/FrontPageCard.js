@@ -1,7 +1,7 @@
 import React from "react";
 import "./FrontPageCard.css";
 import { Link } from "react-router-dom";
-import ImageContainer from "../../components/ImageContainer/ImageContainer";
+import ImageContainer from "../../ImageContainer/ImageContainer";
 function FrontPageCard(props) {
   console.log(props);
   return (

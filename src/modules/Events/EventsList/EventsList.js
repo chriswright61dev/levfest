@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./EventsList.css";
 import { MainDataContext } from "../../../data/MainDataContext";
-import EventCard from "../../../components/EventCard/EventCard";
+import EventCard from "../../../components/Cards/EventCard/EventCard";
 
 function EventsList() {
   const events = useContext(MainDataContext).mainState.eventsListData;

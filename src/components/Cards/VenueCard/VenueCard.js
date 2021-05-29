@@ -1,7 +1,7 @@
 // import React from "react";
 import { Link } from "react-router-dom";
 
-import ImageContainer from "../ImageContainer/ImageContainer";
+import ImageContainer from "../../ImageContainer/ImageContainer";
 import "./VenueCard.css";
 function VenueCard(props) {
   return (

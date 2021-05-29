@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { MainDataContext } from "../../../data/MainDataContext";
-import VenueCard from "../../../components/VenueCard/VenueCard";
+import VenueCard from "../../../components/Cards/VenueCard/VenueCard";
 import "./VenueList.css";
 function VenueList() {
   const venues = useContext(MainDataContext).mainState.venuesListData;

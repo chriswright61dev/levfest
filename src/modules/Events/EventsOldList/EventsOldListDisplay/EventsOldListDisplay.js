@@ -1,5 +1,5 @@
 import React from "react";
-import EventCard from "../../../../components/EventCard/EventCard";
+import EventCard from "../../../../components/Cards/EventCard/EventCard";
 
 function EventsOldListDisplay(props) {
   const events = props.events;

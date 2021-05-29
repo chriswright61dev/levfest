@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { MainDataContext } from "../../../data/MainDataContext";
-import NewsCard from "../../../components/NewsCard/NewsCard";
+import NewsCard from "../../../components/Cards/NewsCard/NewsCard";
 function NewsList() {
   const news = useContext(MainDataContext).mainState.newsListData;
 

@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { MainDataContext } from "../../../data/MainDataContext";
 import "./EventsAtVenue.css";
 
-import EventCard from "../../../components/EventCard/EventCard";
+import EventCard from "../../../components/Cards/EventCard/EventCard";
 function EventsAtVenue(props) {
   // props about venue
   // console.log("props", props);
