@@ -1,6 +1,10 @@
 import EventsOldList from "../modules/Events/EventsOldList/EventsOldList";
 function eventsOld() {
-  return <EventsOldList />;
+  return (
+    <div className="content">
+      <EventsOldList />
+    </div>
+  );
 }
 
 export default eventsOld;

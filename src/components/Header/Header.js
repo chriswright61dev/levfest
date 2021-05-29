@@ -1,10 +1,10 @@
-// import React from "react";
+import "./Header.css";
 import Navigation from "./Navigation/Navigation";
 function Header() {
   return (
-    <div>
-      header <Navigation />
-    </div>
+    <header>
+      <Navigation />
+    </header>
   );
 }
 

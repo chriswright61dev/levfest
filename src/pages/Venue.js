@@ -3,10 +3,10 @@ import VenueDetails from "../modules/Venues/VenueDetails/VenueDetails";
 
 function Venue() {
   return (
-    <div className="container">
-      <main>
+    <div className="content">
+      <div className="container">
         <VenueDetails />
-      </main>
+      </div>
 
       <aside>
         <h4>Other Venues</h4>

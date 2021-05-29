@@ -1,0 +1,4 @@
+.front_page {
+  display: flex;
+  flex-wrap: wrap;
+}
