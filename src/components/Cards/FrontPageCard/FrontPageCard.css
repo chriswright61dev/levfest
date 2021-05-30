@@ -12,6 +12,7 @@
 }
 
 .front_page_card__text_top {
+  pointer-events: none;
   border-radius: 1rem;
   text-align: center;
   padding-top: 1rem;
@@ -26,6 +27,7 @@
 }
 
 .front_page_card__text_bottom {
+  pointer-events: none;
   text-align: center;
   padding-bottom: 1rem;
   color: white;

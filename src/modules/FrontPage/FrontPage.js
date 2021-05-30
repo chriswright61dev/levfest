@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../images/badlogo.png";
+import svglogo from "../../images/logo.svg";
 import boxbg from "../../images/boxbg.jpg";
 import herobg from "../../images/hero1.jpg";
 import "./FrontPage.css";
@@ -9,7 +10,8 @@ function FrontPage() {
   return (
     <div className="front_page">
       <HeroContainer
-        logosource={logo}
+        // logosource={logo}
+        logosource={svglogo}
         title="festival name"
         text="something about the festival"
         IMGsource={herobg}
