@@ -1,6 +1,5 @@
 import React from "react";
-import logo from "../../images/badlogo.png";
-import svglogo from "../../images/logo.svg";
+import svglogo from "../../images/levfestlogo.svg";
 import boxbg from "../../images/boxbg.jpg";
 import herobg from "../../images/hero1.jpg";
 import "./FrontPage.css";
@@ -13,7 +12,7 @@ function FrontPage() {
         // logosource={logo}
         logosource={svglogo}
         title="festival name"
-        text="something about the festival"
+        text="dates and an intro to the festival"
         IMGsource={herobg}
       />
       <div className="front_page__cards">

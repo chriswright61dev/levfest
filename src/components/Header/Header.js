@@ -1,11 +1,7 @@
 import "./Header.css";
-import Navigation from "./Navigation/Navigation";
+
 function Header() {
-  return (
-    <header>
-      <Navigation />
-    </header>
-  );
+  return <header>put a logo and dates here</header>;
 }
 
 export default Header;
