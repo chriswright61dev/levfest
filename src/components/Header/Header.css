@@ -4,5 +4,16 @@ header {
   top: 0;
   margin-top: 0;
   padding-top: 0;
+  background: rgb(53, 52, 52);
   z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_text {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  text-align: center;
+  padding-right: 2rem;
 }

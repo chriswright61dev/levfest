@@ -10,11 +10,9 @@
   justify-content: center;
 }
 .hero_container__logo {
-  /* background-color: rgba(207, 69, 184, 1); */
   height: 250px;
-  /* height: 100%; */
   width: 250px;
-
+  /* visibility: hidden; */
   position: relative;
   filter: drop-shadow(16px 16px 20px rgb(39, 39, 39));
   /* height: 25vh;

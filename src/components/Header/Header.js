@@ -1,7 +1,16 @@
 import "./Header.css";
+import HeaderLogo from "./HeaderLogo/HeaderLogo";
+import svglogo from "../../images/levfestlogo.svg";
 
 function Header() {
-  return <header>put a logo and dates here</header>;
+  return (
+    <header>
+      <HeaderLogo logosource={svglogo} />
+      <div className="header_text">
+        <p>Festival Dates</p>
+      </div>
+    </header>
+  );
 }
 
 export default Header;
