@@ -9,15 +9,13 @@ import HeroContainer from "../../components/HeroContainer/HeroContainer";
 // import FrontPageCard from "../../components/Cards/FrontPageCard/FrontPageCard";
 import FrontPageBigCard from "../../components/Cards/FrontPageBigCard/FrontPageBigCard";
 import FrontPageDataCard from "../../components/Cards/FrontPageDataCard/FrontPageDataCard";
+import FrontPageEventDataCard from "../../components/Cards/FrontPageDataCards/FrontPageEventDataCard/FrontPageEventDataCard";
+import FrontPageNewsDataCard from "../../components/Cards/FrontPageDataCards/FrontPageNewsDataCard/FrontPageNewsDataCard";
+import FrontPageVenueDataCard from "../../components/Cards/FrontPageDataCards/FrontPageVenueDataCard/FrontPageVenueDataCard";
 
 function FrontPage() {
   // scroll animation stuff
-  // let classNameTwo = "card_wrapper";
-  // let classNameThree = "card_wrapper";
-  // let classNameFour = "card_wrapper";
-  // classNameFour += "triggered";
-  // classNameThree += "triggered";
-  // classNameTwo += "triggered";
+
   // don't animate box 1 just 2 3 and 4 so name refs etc like that
 
   // state for data about boxes
@@ -80,7 +78,8 @@ function FrontPage() {
             IMGtype="square"
           />
 
-          <FrontPageDataCard />
+          {/* <FrontPageDataCard /> */}
+          <FrontPageEventDataCard />
         </div>
         {/* Function components cannot be given refs. 
 Attempts to access this ref will fail.  */}
@@ -100,7 +99,7 @@ Attempts to access this ref will fail.  */}
             IMGaltText="alt text is - What's going on now"
             IMGtype="square"
           />
-          <FrontPageDataCard />
+          <FrontPageNewsDataCard />
         </div>
 
         <div
@@ -117,7 +116,7 @@ Attempts to access this ref will fail.  */}
             IMGaltText="alt text is - What's On Where"
             IMGtype="square"
           />
-          <FrontPageDataCard />
+          <FrontPageVenueDataCard />
         </div>
 
         <div
@@ -134,7 +133,6 @@ Attempts to access this ref will fail.  */}
             IMGaltText="alt text is - old events  "
             IMGtype="square"
           />
-          <FrontPageDataCard />
         </div>
       </div>
     </div>

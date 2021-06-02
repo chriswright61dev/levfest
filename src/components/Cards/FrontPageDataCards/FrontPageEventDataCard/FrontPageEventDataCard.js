@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import "./FrontPageDataCard.css";
-import { MainDataContext } from "../../../data/MainDataContext";
-import FrontPageDataCardBlock from "../FrontPageDataCards/FrontPageDataCardBlock/FrontPageDataCardBlock.js";
-function FrontPageDataCard() {
+import "./FrontPageEventDataCard.css";
+import { MainDataContext } from "../../../../data/MainDataContext";
+import FrontPageDataCardBlock from "../FrontPageDataCardBlock/FrontPageDataCardBlock.js";
+
+function FrontPageEventDataCard() {
   const events = useContext(MainDataContext).mainState.eventsListData;
-  console.log(events);
+
   if (!events) {
     return null;
   } else {
@@ -12,7 +13,7 @@ function FrontPageDataCard() {
       (event) => event.event_highlight === "highlight"
     );
     return (
-      <div className="front_page_data_card">
+      <div className="front_page_event_data_card">
         {highlights.map((event) => {
           return (
             <FrontPageDataCardBlock
@@ -35,4 +36,4 @@ function FrontPageDataCard() {
   }
 }
 
-export default FrontPageDataCard;
+export default FrontPageEventDataCard;
