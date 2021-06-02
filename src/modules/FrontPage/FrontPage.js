@@ -8,7 +8,7 @@ import HeroContainer from "../../components/HeroContainer/HeroContainer";
 
 // import FrontPageCard from "../../components/Cards/FrontPageCard/FrontPageCard";
 import FrontPageBigCard from "../../components/Cards/FrontPageBigCard/FrontPageBigCard";
-import FrontPageDataCard from "../../components/Cards/FrontPageDataCard/FrontPageDataCard";
+// import FrontPageDataCard from "../../components/Cards/FrontPageDataCard/FrontPageDataCard";
 import FrontPageEventDataCard from "../../components/Cards/FrontPageDataCards/FrontPageEventDataCard/FrontPageEventDataCard";
 import FrontPageNewsDataCard from "../../components/Cards/FrontPageDataCards/FrontPageNewsDataCard/FrontPageNewsDataCard";
 import FrontPageVenueDataCard from "../../components/Cards/FrontPageDataCards/FrontPageVenueDataCard/FrontPageVenueDataCard";
