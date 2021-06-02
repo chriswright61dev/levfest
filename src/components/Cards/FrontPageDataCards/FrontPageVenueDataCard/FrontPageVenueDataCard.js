@@ -6,7 +6,6 @@ import FrontPageDataCardBlock from "../FrontPageDataCardBlock/FrontPageDataCardB
 function FrontPageVenueDataCard() {
   const venues = useContext(MainDataContext).mainState.venuesListData;
 
-  console.log(venues);
   if (!venues) {
     return null;
   } else {
@@ -14,7 +13,7 @@ function FrontPageVenueDataCard() {
       (venue) => venue.venue_highlight === "highlight"
     );
     return (
-      <div className="front_page_event_data_card">
+      <div className="front_page_venue_data_cards">
         {highlights.map((venue) => {
           return (
             <FrontPageDataCardBlock

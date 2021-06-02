@@ -12,7 +12,7 @@ function FrontPageDataCard() {
       (event) => event.event_highlight === "highlight"
     );
     return (
-      <div className="front_page_data_card">
+      <div className="front_page_data_cards">
         {highlights.map((event) => {
           return (
             <FrontPageDataCardBlock

@@ -16,8 +16,12 @@
   background: greenyellow;
   width: 100vw;
   display: flex;
+  /* align-items: center; */
+  /* justify-content: flex-start; */
+  border: 1px solid;
+  margin-bottom: 4rem;
 }
-
+/*  */
 .animatestart {
   position: relative;
   left: -100vw;

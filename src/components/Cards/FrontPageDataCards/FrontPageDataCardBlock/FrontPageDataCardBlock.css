@@ -1,15 +1,19 @@
 .front_page_data_card_block {
   display: flex;
-  width: 400px;
+  background-color: red;
+
+  width: 24vw;
+  height: 50%;
 }
 
 .front_page_data_card_block_image {
-  width: 80px;
-  height: 80px;
-  background-color: yellow;
+  width: 120px;
+  height: 120px;
+  /* background-color: yellow; */
   margin: 1rem;
 }
 
 .front_page_data_card_block_text {
   flex: 1;
+  /* background-color: rgb(190, 141, 75); */
 }
