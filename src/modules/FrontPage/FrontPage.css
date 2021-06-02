@@ -12,6 +12,12 @@
   justify-content: space-evenly;
 }
 
+.card_wrapper {
+  background: greenyellow;
+  width: 100vw;
+  display: flex;
+}
+
 .animatestart {
   position: relative;
   left: -100vw;

@@ -5,14 +5,19 @@ import boxbg from "../../images/boxbg.jpg";
 import herobg from "../../images/hero1.jpg";
 import "./FrontPage.css";
 import HeroContainer from "../../components/HeroContainer/HeroContainer";
+
 // import FrontPageCard from "../../components/Cards/FrontPageCard/FrontPageCard";
 import FrontPageBigCard from "../../components/Cards/FrontPageBigCard/FrontPageBigCard";
+import FrontPageDataCard from "../../components/Cards/FrontPageDataCard/FrontPageDataCard";
+
 function FrontPage() {
   // scroll animation stuff
-  let classNameTwo = "";
-  let classNameThree = "";
-  let classNameFour = "";
-
+  // let classNameTwo = "card_wrapper";
+  // let classNameThree = "card_wrapper";
+  // let classNameFour = "card_wrapper";
+  // classNameFour += "triggered";
+  // classNameThree += "triggered";
+  // classNameTwo += "triggered";
   // don't animate box 1 just 2 3 and 4 so name refs etc like that
 
   // state for data about boxes
@@ -39,13 +44,10 @@ function FrontPage() {
       // console.log("scrollPosition", scrollPosition);
 
       if (boxFourPosition < scrollPosition + positionOffset) {
-        classNameFour += "triggered";
         setShowBox((state) => ({ ...state, itemFour: true }));
       } else if (boxThreePosition < scrollPosition + positionOffset) {
-        classNameThree += "triggered";
         setShowBox((state) => ({ ...state, itemThree: true }));
       } else if (boxTwoPosition < scrollPosition + positionOffset) {
-        classNameTwo += "triggered";
         setShowBox((state) => ({ ...state, itemTwo: true }));
       }
     };
@@ -68,23 +70,27 @@ function FrontPage() {
         {/* card wrapper */}
         {/* first card is not animated */}
 
-        <FrontPageBigCard
-          title="What's On This Year - events"
-          text="What is On This Year then"
-          link="/events"
-          IMGsource={boxbg}
-          IMGaltText="alt text is - What's On This Year"
-          IMGtype="square"
-        />
+        <div className="card_wrapper">
+          <FrontPageBigCard
+            title="Whats On This Year - events"
+            text="What is On This Year then"
+            link="/events"
+            IMGsource={boxbg}
+            IMGaltText="alt text is - What's On This Year"
+            IMGtype="square"
+          />
 
+          <FrontPageDataCard />
+        </div>
         {/* Function components cannot be given refs. 
 Attempts to access this ref will fail.  */}
         {/* use div as a wrapper */}
 
         <div
           ref={itemTwoRef}
-          className={`animatestart${showBox.itemTwo ? " triggered" : ""}`}
-          // animate={showBox.itemTwo}
+          className={`card_wrapper animatestart${
+            showBox.itemTwo ? " triggered" : ""
+          }`}
         >
           <FrontPageBigCard
             title="What's Happening - news"
@@ -94,12 +100,14 @@ Attempts to access this ref will fail.  */}
             IMGaltText="alt text is - What's going on now"
             IMGtype="square"
           />
+          <FrontPageDataCard />
         </div>
 
         <div
           ref={itemThreeRef}
-          className={`animatestart${showBox.itemThree ? " triggered" : ""}`}
-          // animate={showBox.itemThree}
+          className={`card_wrapper animatestart${
+            showBox.itemThree ? " triggered" : ""
+          }`}
         >
           <FrontPageBigCard
             title="Where is it happening - venues"
@@ -109,12 +117,14 @@ Attempts to access this ref will fail.  */}
             IMGaltText="alt text is - What's On Where"
             IMGtype="square"
           />
+          <FrontPageDataCard />
         </div>
 
         <div
           ref={itemFourRef}
-          className={`animatestart${showBox.itemFour ? " triggered" : ""}`}
-          // animate={showBox.itemFour}
+          className={`card_wrapper animatestart${
+            showBox.itemFour ? " triggered" : ""
+          }`}
         >
           <FrontPageBigCard
             title="What's Happened Before "
@@ -124,6 +134,7 @@ Attempts to access this ref will fail.  */}
             IMGaltText="alt text is - old events  "
             IMGtype="square"
           />
+          <FrontPageDataCard />
         </div>
       </div>
     </div>
