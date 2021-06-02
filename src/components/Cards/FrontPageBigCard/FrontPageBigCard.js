@@ -3,7 +3,7 @@ import "./FrontPageBigCard.css";
 import { Link } from "react-router-dom";
 import ImageContainer from "../../ImageContainer/ImageContainer";
 function FrontPageBigCard(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <div className="front_page_big_card">
       <div className="front_page_big_card__text_top">

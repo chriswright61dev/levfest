@@ -11,3 +11,16 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+.animatestart {
+  position: relative;
+  left: -100vw;
+}
+
+.triggered {
+  transform: translateX(100vw);
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-delay: 0.2s;
+  transition-timing-function: ease-out;
+}
