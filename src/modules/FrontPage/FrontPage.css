@@ -13,7 +13,7 @@
 }
 
 .card_wrapper {
-  background: greenyellow;
+  /* background: greenyellow; */
   width: 100vw;
   display: flex;
   /* align-items: center; */

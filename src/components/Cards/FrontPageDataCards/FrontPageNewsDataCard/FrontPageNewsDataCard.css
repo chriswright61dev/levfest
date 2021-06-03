@@ -1,0 +1,6 @@
+.front_page_news_data_card {
+  background-color: yellow;
+  width: 50vw;
+  display: flex;
+  flex-wrap: wrap;
+}

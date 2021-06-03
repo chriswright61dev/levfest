@@ -1,6 +1,6 @@
 .front_page_data_card_block {
   display: flex;
-  background-color: rgb(230, 222, 150);
+  background-color: rgb(44, 44, 44, 0.5);
 
   width: 22vw;
 
@@ -18,5 +18,5 @@
   height: 150px;
   overflow: hidden;
   flex: 1;
-  background-color: rgb(190, 141, 75);
+  /* background-color: rgb(190, 141, 75); */
 }
