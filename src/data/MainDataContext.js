@@ -11,6 +11,8 @@ const thisyear = new Date().getFullYear();
 // get data from these urls
 const mainApiListsURLs = {
   // api urls object
+  festivalData:
+    "http://www.levenshulmecommunityfestival.co.uk/api_levfest_venues_list/api_levfest_basic_data",
 
   venuesList:
     "http://www.levenshulmecommunityfestival.co.uk/api_levfest_venues_list ",
@@ -24,11 +26,13 @@ const mainApiListsURLs = {
 
 function MainDataContextProvider(props) {
   const initialState = {
+    festivalDataLoaded: false,
     venuesListLoaded: false,
     eventsListLoaded: false,
     newsListLoaded: false,
     feedsCount: 0,
     loadCount: 0,
+    festivalData: [],
     venuesListData: [],
     venuesLongData: [],
     eventsListData: [],
@@ -57,6 +61,14 @@ function MainDataContextProvider(props) {
         };
       }
 
+      case "FESTIVAL_DATA_LOADED": {
+        return {
+          ...mainState,
+          festivalDataLoaded: true,
+          loadCount: mainState.loadCount + 1,
+        };
+      }
+
       case "VENUES_LIST_DATA_LOADED": {
         return {
           ...mainState,
@@ -79,6 +91,10 @@ function MainDataContextProvider(props) {
           newsListLoaded: true,
           loadCount: mainState.loadCount + 1,
         };
+      }
+
+      case "ADD_FESTIVAL_DATA": {
+        return { ...mainState, festivalData: action.value };
       }
 
       case "ADD_NEWS_LIST_DATA": {
@@ -170,6 +186,10 @@ function MainDataContextProvider(props) {
 
   useEffect(() => {
     feedCounter(mainApiListsURLs, dispatch);
+  }, []);
+
+  useEffect(() => {
+    fetchListData("festivalData", mainApiListsURLs, dispatch);
   }, []);
 
   useEffect(() => {
