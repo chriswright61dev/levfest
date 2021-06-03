@@ -1,17 +1,15 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
-// import ReactDOM from "react-dom";
 import svglogo from "../../images/levfestlogo.svg";
 import boxbg from "../../images/boxbg.jpg";
 import herobg from "../../images/hero1.jpg";
 import "./FrontPage.css";
 import HeroContainer from "../../components/HeroContainer/HeroContainer";
-
-// import FrontPageCard from "../../components/Cards/FrontPageCard/FrontPageCard";
-import FrontPageBigCard from "../../components/Cards/FrontPageBigCard/FrontPageBigCard";
 // import FrontPageDataCard from "../../components/Cards/FrontPageDataCard/FrontPageDataCard";
-import FrontPageEventDataCard from "../../components/Cards/FrontPageDataCards/FrontPageEventDataCard/FrontPageEventDataCard";
-import FrontPageNewsDataCard from "../../components/Cards/FrontPageDataCards/FrontPageNewsDataCard/FrontPageNewsDataCard";
-import FrontPageVenueDataCard from "../../components/Cards/FrontPageDataCards/FrontPageVenueDataCard/FrontPageVenueDataCard";
+// import FrontPageCard from "../../components/Cards/FrontPageCard/FrontPageCard";
+import FrontPageBigCard from "../../components/Cards/FrontPage/FrontPageBigCard/FrontPageBigCard";
+import FrontPageEventDataCard from "../../components/Cards/FrontPage/FrontPageEventDataCard/FrontPageEventDataCard";
+import FrontPageNewsDataCard from "../../components/Cards/FrontPage/FrontPageNewsDataCard/FrontPageNewsDataCard";
+import FrontPageVenueDataCard from "../../components/Cards/FrontPage/FrontPageVenueDataCard/FrontPageVenueDataCard";
 
 function FrontPage() {
   // scroll animation stuff
@@ -59,8 +57,14 @@ function FrontPage() {
     <div className="front_page">
       <HeroContainer
         logosource={svglogo}
-        title="festival name"
-        text="dates and an intro to the festival"
+        title="Levenshulme Festival"
+        dates="24th to the 28th of Wheneverber 2021"
+        text="With the return of large gatherings, 
+        we’re delighted to announce our new festival lineup 
+        for Levenshulme’s Festival of Art and Culture LevFest.
+        
+        Spread across multiple venues in the luscious surroundings 
+        of sunny Levenshulme."
         IMGsource={herobg}
       />
 
