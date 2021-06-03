@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useRef, useState, useContext } from "react";
 import { MainDataContext } from "../../data/MainDataContext";
-import svglogo from "../../images/levfestlogo.svg";
+// import svglogo from "../../images/levfestlogo.svg";
+
 import boxbg from "../../images/boxbg.jpg";
 import herobg from "../../images/hero1.jpg";
 import "./FrontPage.css";
@@ -12,16 +13,6 @@ import FrontPageVenueDataCard from "../../components/Cards/FrontPage/FrontPageVe
 
 function FrontPage() {
   const festival = useContext(MainDataContext).mainState.festivalData[0];
-
-  // festival.festival_body:
-  // ​
-  // festival.festival_dates:
-  // ​
-  // festival.festival_intro:
-  // ​
-  // festival.festival_logo:
-  // ​
-  // festival.festival_title:
 
   // scroll animation stuff
 
@@ -64,18 +55,23 @@ function FrontPage() {
     //    remove event listener in cleanup function
   }, []);
 
+  // festival.festival_body:
+  // ​
+  // festival.festival_dates:
+  // ​
+  // festival.festival_intro:
+  // ​
+  // festival.festival_logo:
+  // ​
+  // festival.festival_title:
+
   return (
     <div className="front_page">
       <HeroContainer
-        logosource={svglogo}
-        title="Levenshulme Festival"
-        dates="24th to the 28th of Wheneverber 2021"
-        text="With the return of large gatherings, 
-        we’re delighted to announce our new festival lineup 
-        for Levenshulme’s Festival of Art and Culture LevFest.
-        
-        Spread across multiple venues in the luscious surroundings 
-        of sunny Levenshulme."
+        logosource={festival ? festival.festival_logo : null}
+        title={festival ? festival.festival_title : null}
+        dates={festival ? festival.festival_dates : null}
+        text={festival ? festival.festival_intro : null}
         IMGsource={herobg}
       />
 
