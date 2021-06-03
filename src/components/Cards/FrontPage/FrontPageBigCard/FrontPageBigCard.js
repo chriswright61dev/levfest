@@ -1,7 +1,7 @@
 import React from "react";
 import "./FrontPageBigCard.css";
 import { Link } from "react-router-dom";
-import ImageContainer from "../../ImageContainer/ImageContainer";
+import ImageContainer from "../../../ImageContainer/ImageContainer";
 function FrontPageBigCard(props) {
   // console.log(props);
   return (

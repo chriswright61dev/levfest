@@ -8,7 +8,7 @@ function FrontPageNewsDataCard() {
   if (!news) {
     return null;
   } else {
-    let size = 3;
+    let size = 4;
     const latestNews = news.slice(0, size);
 
     return (
@@ -21,7 +21,7 @@ function FrontPageNewsDataCard() {
               link={"news"}
               title={newsitem.news_title}
               image={newsitem.news_image_1}
-              introduction={newsitem.news_introduction}
+              newsintro={newsitem.news_introduction}
             />
           );
         })}

@@ -22,7 +22,7 @@ function FrontPageDataCardBlock(props) {
 
           {/* date={event.event_date_time} */}
           {props.venue ? <p>At {props.venue}</p> : null}
-          {/* {props.introduction ? <p>{props.introduction}</p> : null} */}
+          {props.newsintro ? <p>{props.newsintro}</p> : null}
           {/* too much text */}
         </div>
       </div>
