@@ -11,8 +11,8 @@ const thisyear = new Date().getFullYear();
 // get data from these urls
 const mainApiListsURLs = {
   // api urls object
-  festivalData:
-    "http://www.levenshulmecommunityfestival.co.uk/api_levfest_venues_list/api_levfest_basic_data",
+  festival:
+    "http://www.levenshulmecommunityfestival.co.uk/api_levfest_basic_data",
 
   venuesList:
     "http://www.levenshulmecommunityfestival.co.uk/api_levfest_venues_list ",
@@ -26,7 +26,7 @@ const mainApiListsURLs = {
 
 function MainDataContextProvider(props) {
   const initialState = {
-    festivalDataLoaded: false,
+    festivalLoaded: false,
     venuesListLoaded: false,
     eventsListLoaded: false,
     newsListLoaded: false,
@@ -64,7 +64,7 @@ function MainDataContextProvider(props) {
       case "FESTIVAL_DATA_LOADED": {
         return {
           ...mainState,
-          festivalDataLoaded: true,
+          festivalLoaded: true,
           loadCount: mainState.loadCount + 1,
         };
       }
@@ -189,7 +189,7 @@ function MainDataContextProvider(props) {
   }, []);
 
   useEffect(() => {
-    fetchListData("festivalData", mainApiListsURLs, dispatch);
+    fetchListData("festival", mainApiListsURLs, dispatch);
   }, []);
 
   useEffect(() => {

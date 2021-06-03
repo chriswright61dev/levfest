@@ -1,17 +1,28 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState, useContext } from "react";
+import { MainDataContext } from "../../data/MainDataContext";
 import svglogo from "../../images/levfestlogo.svg";
 import boxbg from "../../images/boxbg.jpg";
 import herobg from "../../images/hero1.jpg";
 import "./FrontPage.css";
 import HeroContainer from "../../components/HeroContainer/HeroContainer";
-// import FrontPageDataCard from "../../components/Cards/FrontPageDataCard/FrontPageDataCard";
-// import FrontPageCard from "../../components/Cards/FrontPageCard/FrontPageCard";
 import FrontPageBigCard from "../../components/Cards/FrontPage/FrontPageBigCard/FrontPageBigCard";
 import FrontPageEventDataCard from "../../components/Cards/FrontPage/FrontPageEventDataCard/FrontPageEventDataCard";
 import FrontPageNewsDataCard from "../../components/Cards/FrontPage/FrontPageNewsDataCard/FrontPageNewsDataCard";
 import FrontPageVenueDataCard from "../../components/Cards/FrontPage/FrontPageVenueDataCard/FrontPageVenueDataCard";
 
 function FrontPage() {
+  const festival = useContext(MainDataContext).mainState.festivalData[0];
+
+  // festival.festival_body:
+  // ​
+  // festival.festival_dates:
+  // ​
+  // festival.festival_intro:
+  // ​
+  // festival.festival_logo:
+  // ​
+  // festival.festival_title:
+
   // scroll animation stuff
 
   // don't animate box 1 just 2 3 and 4 so name refs etc like that
