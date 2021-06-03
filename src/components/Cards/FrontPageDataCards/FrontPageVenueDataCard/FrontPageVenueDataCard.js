@@ -22,6 +22,7 @@ function FrontPageVenueDataCard() {
               link={"venues"}
               title={venue.venue_title}
               image={venue.venue_image_1}
+              introduction={venue.venue_introduction}
             />
           );
         })}

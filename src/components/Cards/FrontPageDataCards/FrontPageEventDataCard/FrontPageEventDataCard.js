@@ -25,7 +25,7 @@ function FrontPageEventDataCard() {
               date={event.event_date_time}
               venue={event.event_venue}
               // venue_id={event.event_venue_id}
-              // introduction={event.event_introduction}
+              introduction={event.event_introduction}
               // time={event.event_time_text}
               image={event.event_image_1}
             />

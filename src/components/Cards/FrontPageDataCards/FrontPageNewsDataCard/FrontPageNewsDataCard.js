@@ -21,6 +21,7 @@ function FrontPageNewsDataCard() {
               link={"news"}
               title={newsitem.news_title}
               image={newsitem.news_image_1}
+              introduction={newsitem.news_introduction}
             />
           );
         })}
