@@ -1,6 +1,25 @@
+/* media queries */
+/* mobile first small*/
+/* main page content container */
 .front_page_venue_data_cards {
-  /* background-color: rgb(112, 218, 183); */
-  width: 50vw;
-  display: flex;
-  flex-wrap: wrap;
+  /* background-color: yellow; */
+  width: 100vw;
+  display: none;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .front_page_venue_data_cards {
+    /* background-color: rgb(112, 218, 183); */
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

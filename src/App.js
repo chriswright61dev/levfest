@@ -1,4 +1,5 @@
 import "./App.css";
+import "./colours.css";
 import MainDataContext from "./data/MainDataContext";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";

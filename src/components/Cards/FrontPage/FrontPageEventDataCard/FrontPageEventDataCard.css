@@ -1,15 +1,51 @@
+/* media queries */
+/* mobile first small*/
+/* main page content container */
 .front_page_event_data_card {
   /* background-color: yellow; */
-  width: 50vw;
   display: flex;
   flex-wrap: wrap;
+  display: none;
+  width: 100vw;
 }
 
-.front_page_event_data_card a {
-  color: white;
-  text-decoration: none;
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
 }
 
-.front_page_event_data_card a:hover {
-  color: yellow;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .front_page_data_card_block_image {
+    width: 125px;
+    height: 125px;
+    /* background-color: yellow; */
+    margin: 1.5rem;
+  }
+
+  .front_page_data_card_block_text {
+    height: 150px;
+    overflow: hidden;
+    flex: 1;
+    /* background-color: rgb(190, 141, 75); */
+  }
+
+  .front_page_event_data_card {
+    /* background-color: yellow; */
+
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .front_page_event_data_card a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .front_page_event_data_card a:hover {
+    color: yellow;
+  }
 }

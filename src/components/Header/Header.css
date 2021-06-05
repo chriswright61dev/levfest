@@ -1,19 +1,51 @@
+/* media queries */
+/* mobile first small*/
+/* main page content container */
 header {
   width: 100vw;
-  position: fixed;
-  top: 0;
+  background: rgb(53, 52, 52);
   margin-top: 0;
   padding-top: 0;
-  background: rgb(53, 52, 52);
-  z-index: 50;
+  position: fixed;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 50;
 }
 
 .header_text {
-  color: rgb(255, 255, 255);
-  font-size: 3rem;
+  color: var(--text_light_color);
   text-align: center;
+
+  font-size: 0.8rem;
   padding-right: 2rem;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .header_text {
+    font-size: 0.5rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .header_text {
+    font-size: 3rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* header { */
+  /* width: 100vw; */
+  /* } */
+
+  .header_text {
+    font-size: 3rem;
+    padding-right: 2rem;
+  }
 }

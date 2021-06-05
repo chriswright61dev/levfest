@@ -1,22 +1,44 @@
+/* media queries */
+/* mobile first small*/
+/* main page content container */
 .front_page_data_card_block {
   display: flex;
-  background-color: rgb(44, 44, 44, 0.5);
+  flex-direction: column;
+  background-color: rgba(44, 44, 44, 0.5);
 
-  width: 22vw;
+  width: 100vw;
 
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
 }
 
-.front_page_data_card_block_image {
-  width: 125px;
-  height: 125px;
-  /* background-color: yellow; */
-  margin: 1.5rem;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
 }
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .front_page_data_card_block {
+    display: flex;
+    background-color: rgb(44, 44, 44, 0.5);
 
-.front_page_data_card_block_text {
-  height: 150px;
-  overflow: hidden;
-  flex: 1;
-  /* background-color: rgb(190, 141, 75); */
+    width: 22vw;
+
+    margin-right: 2rem;
+  }
+
+  .front_page_data_card_block_image {
+    width: 125px;
+    height: 125px;
+    /* background-color: yellow; */
+    margin: 1.5rem;
+  }
+
+  .front_page_data_card_block_text {
+    height: 150px;
+    overflow: hidden;
+    flex: 1;
+    /* background-color: rgb(190, 141, 75); */
+  }
 }

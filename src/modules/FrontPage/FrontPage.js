@@ -15,7 +15,6 @@ function FrontPage() {
   const festival = useContext(MainDataContext).mainState.festivalData[0];
 
   // scroll animation stuff
-
   // don't animate box 1 just 2 3 and 4 so name refs etc like that
 
   // state for data about boxes
@@ -24,7 +23,7 @@ function FrontPage() {
     itemThree: false,
     itemFour: false,
   });
-  // useRef for accessing  DOM elements,
+  // useRef for accessing DOM elements,
   const itemTwoRef = useRef(null),
     itemThreeRef = useRef(null),
     itemFourRef = useRef(null);
@@ -54,16 +53,6 @@ function FrontPage() {
     return () => window.removeEventListener("scroll", onScroll);
     //    remove event listener in cleanup function
   }, []);
-
-  // festival.festival_body:
-  // ​
-  // festival.festival_dates:
-  // ​
-  // festival.festival_intro:
-  // ​
-  // festival.festival_logo:
-  // ​
-  // festival.festival_title:
 
   return (
     <div className="front_page">

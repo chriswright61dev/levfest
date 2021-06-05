@@ -1,0 +1,8 @@
+:root {
+  --text_dark_color: rgb(15, 15, 15);
+  --text_light_color: rgb(245, 245, 245);
+  --bg_color: rgb(115, 190, 220);
+  --box_bg_color: rgb(55, 55, 50);
+  --price_color: rgb(145, 20, 19);
+  --alert_color: rgb(195, 0, 0);
+}
