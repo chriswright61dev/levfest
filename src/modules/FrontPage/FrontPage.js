@@ -15,35 +15,37 @@ function FrontPage() {
   const festival = useContext(MainDataContext).mainState.festivalData[0];
 
   // scroll animation stuff
-  // don't animate box 1 just 2 3 and 4 so name refs etc like that
-
+  // don't animate box 1 just 2 3 and  so name refs etc like that
+  // removed box four - old events
   // state for data about boxes
   const [showBox, setShowBox] = useState({
     itemTwo: false,
     itemThree: false,
-    itemFour: false,
+    // itemFour: false,
   });
   // useRef for accessing DOM elements,
   const itemTwoRef = useRef(null),
-    itemThreeRef = useRef(null),
-    itemFourRef = useRef(null);
+    itemThreeRef = useRef(null);
+  // itemFourRef = useRef(null);
 
   // useLayoutEffect - before first render
   useLayoutEffect(() => {
     const topPosition = (element) => element.getBoundingClientRect().top;
     const positionOffset = -200;
     const boxTwoPosition = topPosition(itemTwoRef.current),
-      boxThreePosition = topPosition(itemThreeRef.current),
-      boxFourPosition = topPosition(itemFourRef.current);
+      boxThreePosition = topPosition(itemThreeRef.current);
+    // boxFourPosition = topPosition(itemFourRef.current);
 
     const onScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight;
+      // remove box four - old events
       // console.log("scrollPosition", scrollPosition);
-
-      if (boxFourPosition < scrollPosition + positionOffset) {
-        setShowBox((state) => ({ ...state, itemFour: true }));
-      } else if (boxThreePosition < scrollPosition + positionOffset) {
+      // if (boxFourPosition < scrollPosition + positionOffset) {
+      //   setShowBox((state) => ({ ...state, itemFour: true }));
+      if (boxThreePosition < scrollPosition + positionOffset) {
         setShowBox((state) => ({ ...state, itemThree: true }));
+        // } else if (boxThreePosition < scrollPosition + positionOffset) {
+        //   setShowBox((state) => ({ ...state, itemThree: true }));
       } else if (boxTwoPosition < scrollPosition + positionOffset) {
         setShowBox((state) => ({ ...state, itemTwo: true }));
       }
@@ -119,7 +121,7 @@ Attempts to access this ref will fail.  */}
           <FrontPageVenueDataCard />
         </div>
 
-        <div
+        {/* <div
           ref={itemFourRef}
           className={`card_wrapper animatestart${
             showBox.itemFour ? " triggered" : ""
@@ -133,7 +135,7 @@ Attempts to access this ref will fail.  */}
             IMGaltText="alt text is - old events  "
             IMGtype="square"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
