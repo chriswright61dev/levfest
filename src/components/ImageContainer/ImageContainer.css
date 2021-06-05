@@ -9,7 +9,7 @@
 .square {
   position: relative;
   /* background: red; */
-  max-width: 320px;
+  max-width: 360px;
 }
 
 .square:after {

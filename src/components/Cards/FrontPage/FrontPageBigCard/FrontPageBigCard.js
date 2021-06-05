@@ -9,8 +9,12 @@ function FrontPageBigCard(props) {
       <div className="front_page_big_card__text_top">
         <h2>{props.title}</h2>
       </div>
-      <div className="front_page_big_card__text_bottom">
+      <div className="front_page_big_card__text_middle">
         <p>{props.text}</p>
+      </div>
+
+      <div className="front_page_big_card__text_bottom">
+        <p>{props.bottomText}</p>
       </div>
       <Link to={props.link}>
         <ImageContainer

@@ -3,13 +3,59 @@
 /* main page content container */
 
 .front_page_big_card {
-  /* display: none; */
-  position: relative;
-  width: 100vw;
+  background-color: greenyellow;
   height: 320px;
   margin: 1rem;
-  margin-bottom: 4rem;
+  /* margin-bottom: 2rem; */
+  position: relative;
+  /* width: 100vw; */
   /* border-radius: 1rem; */
+}
+
+.front_page_big_card__text_top {
+  background-color: rgba(54, 54, 54, 0.5);
+  height: 100%;
+  min-height: 328px;
+  /*  8 px on bottom? */
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.front_page_big_card__text_top h2 {
+  color: rgb(248, 248, 248);
+  font-weight: 900;
+  margin: 1rem;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.front_page_big_card__text_middle {
+  position: absolute;
+  top: 30%;
+  /* width: 100%; */
+  z-index: 6;
+}
+
+.front_page_big_card__text_middle p {
+  color: rgb(248, 248, 248);
+  font-weight: 600;
+  margin: 1rem;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.front_page_big_card__text_bottom {
+  bottom: 0;
+  position: absolute;
+  /* width: 100%; */
+  z-index: 7;
+}
+
+.front_page_big_card__text_bottom p {
+  color: rgb(248, 248, 248);
+  font-weight: 600;
+  margin: 1rem;
+  text-shadow: 1px 1px 3px #000;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -22,12 +68,12 @@
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .front_page_big_card {
-    position: relative;
-    width: 50vw;
-    height: 320px;
-    margin: 1rem;
     /* margin-bottom: 4rem; */
     border-radius: 1rem;
+    height: 320px;
+    margin: 1rem;
+    position: relative;
+    width: 50vw;
   }
 
   .front_page_big_card img {
@@ -35,28 +81,28 @@
   }
 
   .front_page_big_card__text_top {
-    pointer-events: none;
-    border-radius: 1rem;
-    text-align: center;
-    padding-top: 1rem;
-    color: white;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
     background-color: rgba(54, 54, 54, 0.5);
+    border-radius: 1rem;
+    color: white;
+    height: 100%;
     min-height: 220px;
+    padding-top: 1rem;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
     z-index: 8;
   }
 
   .front_page_big_card__text_bottom {
-    pointer-events: none;
-    text-align: center;
-    padding-bottom: 1rem;
-    color: white;
-    width: 100%;
-    position: absolute;
     bottom: 0;
+    color: white;
+    padding-bottom: 1rem;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    width: 100%;
     z-index: 10;
   }
 }

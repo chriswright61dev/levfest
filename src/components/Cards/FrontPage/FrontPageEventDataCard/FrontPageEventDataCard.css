@@ -1,12 +1,10 @@
 /* media queries */
 /* mobile first small*/
 /* main page content container */
-.front_page_event_data_card {
-  /* background-color: yellow; */
-  display: flex;
-  flex-wrap: wrap;
-  display: none;
-  width: 100vw;
+.front_page_event_data_cards {
+  background-color: rgb(245, 215, 152);
+  margin: 1rem;
+  /* display: none; */
 }
 
 /* Medium devices (tablets, 768px and up) */

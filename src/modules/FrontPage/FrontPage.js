@@ -72,8 +72,9 @@ function FrontPage() {
 
         <div className="card_wrapper">
           <FrontPageBigCard
-            title="Whats On This Year - events"
+            title="Whats On This Year"
             text="What is On This Year then"
+            bottomText="events"
             link="/events"
             IMGsource={boxbg}
             IMGaltText="alt text is - What's On This Year"
@@ -94,8 +95,9 @@ Attempts to access this ref will fail.  */}
           }`}
         >
           <FrontPageBigCard
-            title="What's Happening - news"
+            title="What's Happening"
             text=" What's going on now"
+            bottomText="news"
             link="/news"
             IMGsource={boxbg}
             IMGaltText="alt text is - What's going on now"
@@ -111,8 +113,9 @@ Attempts to access this ref will fail.  */}
           }`}
         >
           <FrontPageBigCard
-            title="Where is it happening - venues"
+            title="Where is it happening"
             text=" What's On Where"
+            bottomText="venues"
             link="/venues"
             IMGsource={boxbg}
             IMGaltText="alt text is - What's On Where"
