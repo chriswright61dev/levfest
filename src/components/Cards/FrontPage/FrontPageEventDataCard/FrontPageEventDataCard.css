@@ -2,7 +2,7 @@
 /* mobile first small*/
 /* main page content container */
 .front_page_event_data_cards {
-  background-color: rgb(245, 215, 152);
+  /* background-color: rgb(245, 215, 152); */
   margin: 1rem;
   /* display: none; */
 }

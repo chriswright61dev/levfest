@@ -60,8 +60,8 @@ function FrontPage() {
     <div className="front_page">
       <HeroContainer
         logosource={festival ? festival.festival_logo : null}
-        title={festival ? festival.festival_title : null}
-        dates={festival ? festival.festival_dates : null}
+        // title={festival ? festival.festival_title : null}
+        // dates={festival ? festival.festival_dates : null}
         text={festival ? festival.festival_intro : null}
         IMGsource={herobg}
       />

@@ -1,10 +1,11 @@
 /* media queries */
 /* mobile first small*/
 /* main page content container */
-.front_page_news_data_card {
+.front_page_news_data_cards {
   /* background-color: yellow; */
-  width: 100vw;
-  display: none;
+  margin: 1rem;
+
+  /* display: none; */
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -16,7 +17,7 @@
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  .front_page_news_data_card {
+  .front_page_news_data_cards {
     background-color: yellow;
     width: 50vw;
     display: flex;

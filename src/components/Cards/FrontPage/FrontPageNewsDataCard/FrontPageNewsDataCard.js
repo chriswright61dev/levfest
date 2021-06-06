@@ -12,7 +12,7 @@ function FrontPageNewsDataCard() {
     const latestNews = news.slice(0, size);
 
     return (
-      <div className="front_page_event_data_card">
+      <div className="front_page_event_data_cards">
         {latestNews.map((newsitem) => {
           return (
             <FrontPageDataCardBlock

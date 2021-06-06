@@ -2,9 +2,9 @@
 /* mobile first small*/
 /* main page content container */
 .front_page_venue_data_cards {
-  /* background-color: yellow; */
-  width: 100vw;
-  display: none;
+  margin: 1rem;
+  margin-bottom: 3rem;
+  /* display: none; */
 }
 
 /* Medium devices (tablets, 768px and up) */
