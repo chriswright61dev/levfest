@@ -37,18 +37,8 @@ function FrontPage() {
 
     const topPosition = (element) => element.getBoundingClientRect().top;
     // const bottomPosition = (element) => element.getBoundingClientRect().bottom;
-    const boxheight = (element) => element.getBoundingClientRect().height;
-    const boxwidth = (element) => element.getBoundingClientRect().width;
-
-    // full width
-    // const positionOffsetOne = 0,
-    //   positionOffsetTwo = -100,
-    //   positionOffsetThree = -100;
-
-    // narrow
-    // const positionOffsetOne = 0,
-    //   positionOffsetTwo = -300,
-    //   positionOffsetThree = -800;
+    // const boxheight = (element) => element.getBoundingClientRect().height;
+    // const boxwidth = (element) => element.getBoundingClientRect().width;
 
     const boxOnePosition = topPosition(itemOneRef.current),
       boxTwoPosition = topPosition(itemTwoRef.current),
@@ -58,23 +48,6 @@ function FrontPage() {
       // scrollY returns the Y coordinate of the top edge of the current viewport.
 
       const scrollPosition = window.scrollY;
-      const triggerpositiontext = scrollPosition + triggerOffset + "px";
-      document
-        .getElementById("marker")
-        .style.setProperty("top", triggerpositiontext);
-      console.log("Scroll Position", scrollPosition);
-      console.log("trigger position ", triggerOffset);
-      console.log("boxOne Position", boxOnePosition);
-      console.log("boxTwo Position", boxTwoPosition);
-      console.log("boxThree Position", boxThreePosition);
-
-      console.log("boxheight 1", boxheight(itemOneRef.current));
-      console.log("boxheight 2", boxheight(itemTwoRef.current));
-      console.log("boxheight 3", boxheight(itemThreeRef.current));
-
-      console.log("boxwidth 1", boxwidth(itemOneRef.current));
-      console.log("boxwidth 2", boxwidth(itemTwoRef.current));
-      console.log("boxwidth 3", boxwidth(itemThreeRef.current));
 
       if (
         boxThreePosition <
@@ -86,13 +59,15 @@ function FrontPage() {
 
         // } else if (boxThreePosition < scrollPosition + positionOffset) {
         //   setShowBox((state) => ({ ...state, itemThree: true }));
-      } else if (
+      }
+      if (
         boxTwoPosition <
         scrollPosition + triggerOffset
         //+ positionOffsetTwo
       ) {
         setShowBox((state) => ({ ...state, itemTwo: true }));
-      } else if (boxOnePosition < scrollPosition + triggerOffset) {
+      }
+      if (boxOnePosition < scrollPosition + triggerOffset) {
         setShowBox((state) => ({ ...state, itemOne: true }));
       }
     };
@@ -104,7 +79,7 @@ function FrontPage() {
 
   return (
     <div className="front_page">
-      <div id="marker"></div>
+      {/* <div id="marker"></div> */}
 
       <HeroContainer
         logosource={festival ? festival.festival_logo : null}
@@ -116,7 +91,6 @@ function FrontPage() {
 
       <div className="front_page__cards">
         {/* card wrapper */}
-        {/* first card is not animated */}
 
         <div
           ref={itemOneRef}
@@ -131,7 +105,7 @@ function FrontPage() {
             link="/events"
             IMGsource={festival ? festival.event_header_bg_image : null}
             IMGaltText="alt text is - What's On This Year"
-            IMGtype="square"
+            IMGtype="coverSpace"
           />
 
           {/* <FrontPageDataCard /> */}
@@ -154,7 +128,7 @@ Attempts to access this ref will fail.  */}
             link="/news"
             IMGsource={festival ? festival.news_header_bg_image : null}
             IMGaltText="alt text is - What's going on now"
-            IMGtype="square"
+            IMGtype="coverSpace"
           />
           <FrontPageNewsDataCard />
         </div>
@@ -172,7 +146,7 @@ Attempts to access this ref will fail.  */}
             link="/venues"
             IMGsource={festival ? festival.venue_header_bg_image : null}
             IMGaltText="alt text is - What's On Where"
-            IMGtype="square"
+            IMGtype="coverSpace"
           />
           <FrontPageVenueDataCard />
         </div>

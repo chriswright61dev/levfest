@@ -17,8 +17,8 @@
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .front_page_event_data_cards {
-    width: 50vw;
-    background-color: rgb(240, 149, 235);
+    width: 42vw;
+    /* background-color: rgb(240, 149, 235); */
     flex: 1;
     margin: 1rem;
     display: flex;

@@ -4,7 +4,7 @@
 
 .front_page_big_card {
   /* link is applied to the image */
-  background-color: greenyellow;
+  /* background-color: greenyellow; */
   height: 320px;
   margin: 1rem;
   position: relative;
@@ -14,12 +14,13 @@
   pointer-events: none;
   background-color: rgba(54, 54, 54, 0.5);
   height: 100%;
-  min-height: 328px;
-  /*  8 px on bottom? */
+  /* min-height: 328px; */
+
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 5;
+  /*  8 px on bottom? */
 }
 
 .front_page_big_card__text_top h2 {
@@ -57,7 +58,8 @@
   text-shadow: 1px 1px 3px #000;
 }
 
-/* Medium devices (tablets, 768px and up) */
+/* Medium devices (tablets, 768px and up)  */
+
 @media (min-width: 768px) {
 }
 
@@ -67,12 +69,14 @@
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .front_page_big_card {
-    /* margin-bottom: 4rem; */
-    border-radius: 1rem;
-    height: 320px;
-    margin: 1rem;
     position: relative;
-    width: 40vw;
+    margin: 0;
+    width: 44vw;
+    height: 400px;
+    border-radius: 1rem;
+    /* height: 100%; */
+    /* margin: 1rem; */
+    /* margin-bottom: 4rem; */
   }
 
   .front_page_big_card img {
@@ -88,10 +92,10 @@
     padding-top: 1rem;
     pointer-events: none;
     position: absolute;
-    text-align: center;
+    text-align: left;
     top: 0;
     width: 100%;
-    z-index: 8;
+    z-index: 5;
   }
 
   .front_page_big_card__text_bottom {
@@ -100,8 +104,8 @@
     padding-bottom: 1rem;
     pointer-events: none;
     position: absolute;
-    text-align: center;
+    text-align: left;
     width: 100%;
-    z-index: 10;
+    z-index: 6;
   }
 }
