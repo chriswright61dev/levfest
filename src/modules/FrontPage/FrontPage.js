@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useRef, useState, useContext } from "react";
 import { MainDataContext } from "../../data/MainDataContext";
 // import svglogo from "../../images/levfestlogo.svg";
 
-import boxbg from "../../images/boxbg.jpg";
+// import boxbg from "../../images/boxbg.jpg";
 import herobg from "../../images/hero1.jpg";
 import "./FrontPage.css";
 import HeroContainer from "../../components/HeroContainer/HeroContainer";
@@ -76,7 +76,7 @@ function FrontPage() {
             text="What is On This Year then"
             bottomText="events"
             link="/events"
-            IMGsource={boxbg}
+            IMGsource={festival ? festival.event_header_bg_image : null}
             IMGaltText="alt text is - What's On This Year"
             IMGtype="square"
           />
@@ -99,7 +99,7 @@ Attempts to access this ref will fail.  */}
             text=" What's going on now"
             bottomText="news"
             link="/news"
-            IMGsource={boxbg}
+            IMGsource={festival ? festival.news_header_bg_image : null}
             IMGaltText="alt text is - What's going on now"
             IMGtype="square"
           />
@@ -117,7 +117,7 @@ Attempts to access this ref will fail.  */}
             text=" What's On Where"
             bottomText="venues"
             link="/venues"
-            IMGsource={boxbg}
+            IMGsource={festival ? festival.venue_header_bg_image : null}
             IMGaltText="alt text is - What's On Where"
             IMGtype="square"
           />
@@ -134,7 +134,7 @@ Attempts to access this ref will fail.  */}
             title="What's Happened Before "
             text=" events you can't go to because they happened last year "
             link="/events_old"
-            IMGsource={boxbg}
+           IMGsource={festival ? festival.past_event_header_bg_image : null}
             IMGaltText="alt text is - old events  "
             IMGtype="square"
           />

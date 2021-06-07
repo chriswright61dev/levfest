@@ -7,11 +7,11 @@ function DateTime(props) {
     //  check that the Date Data exists
     // so split errors don't occur in the formatting funcyion
     return (
-      <h3 className="date_time">
+      <h4 className="date_time">
         {formattedDate.dayofweek} {formattedDate.daysuffix}
         {" of "}
         {formattedDate.month} at {formattedDate.ampm}
-      </h3>
+      </h4>
     );
   } else {
     return null;
