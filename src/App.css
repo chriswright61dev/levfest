@@ -24,7 +24,7 @@ body {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .content {
-    background-color: rgb(128, 230, 69);
+    /* background-color: rgb(128, 230, 69); */
     margin-top: 1rem;
     /* display: flex;
     flex-wrap: wrap; */
@@ -34,7 +34,7 @@ body {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   .content {
-    background-color: rgb(234, 0, 255);
+    /* background-color: rgb(234, 0, 255); */
     margin-top: 1rem;
     /* display: flex;
     flex-wrap: wrap; */
@@ -44,8 +44,8 @@ body {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .content {
-    background-color: rgb(132, 236, 236);
-    margin-top: 1rem;
+    /* background-color: rgb(132, 236, 236); */
+    margin-top: 6rem;
     /* display: flex;
     flex-wrap: wrap; */
   }

@@ -15,39 +15,85 @@ function FrontPage() {
   const festival = useContext(MainDataContext).mainState.festivalData[0];
 
   // scroll animation stuff
-  // don't animate box 1 just 2 3 and  so name refs etc like that
   // removed box four - old events
   // state for data about boxes
   const [showBox, setShowBox] = useState({
+    itemOne: false,
     itemTwo: false,
     itemThree: false,
     // itemFour: false,
   });
   // useRef for accessing DOM elements,
-  const itemTwoRef = useRef(null),
+
+  const itemOneRef = useRef(null),
+    itemTwoRef = useRef(null),
     itemThreeRef = useRef(null);
   // itemFourRef = useRef(null);
 
   // useLayoutEffect - before first render
   useLayoutEffect(() => {
+    // trigger animation when element is past middle of the screen
+    const triggerOffset = window.innerHeight / 2;
+
     const topPosition = (element) => element.getBoundingClientRect().top;
-    const positionOffset = -200;
-    const boxTwoPosition = topPosition(itemTwoRef.current),
+    // const bottomPosition = (element) => element.getBoundingClientRect().bottom;
+    const boxheight = (element) => element.getBoundingClientRect().height;
+    const boxwidth = (element) => element.getBoundingClientRect().width;
+
+    // full width
+    // const positionOffsetOne = 0,
+    //   positionOffsetTwo = -100,
+    //   positionOffsetThree = -100;
+
+    // narrow
+    // const positionOffsetOne = 0,
+    //   positionOffsetTwo = -300,
+    //   positionOffsetThree = -800;
+
+    const boxOnePosition = topPosition(itemOneRef.current),
+      boxTwoPosition = topPosition(itemTwoRef.current),
       boxThreePosition = topPosition(itemThreeRef.current);
-    // boxFourPosition = topPosition(itemFourRef.current);
 
     const onScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight;
-      // remove box four - old events
-      // console.log("scrollPosition", scrollPosition);
-      // if (boxFourPosition < scrollPosition + positionOffset) {
-      //   setShowBox((state) => ({ ...state, itemFour: true }));
-      if (boxThreePosition < scrollPosition + positionOffset) {
+      // scrollY returns the Y coordinate of the top edge of the current viewport.
+
+      const scrollPosition = window.scrollY;
+      const triggerpositiontext = scrollPosition + triggerOffset + "px";
+      document
+        .getElementById("marker")
+        .style.setProperty("top", triggerpositiontext);
+      console.log("Scroll Position", scrollPosition);
+      console.log("trigger position ", triggerOffset);
+      console.log("boxOne Position", boxOnePosition);
+      console.log("boxTwo Position", boxTwoPosition);
+      console.log("boxThree Position", boxThreePosition);
+
+      console.log("boxheight 1", boxheight(itemOneRef.current));
+      console.log("boxheight 2", boxheight(itemTwoRef.current));
+      console.log("boxheight 3", boxheight(itemThreeRef.current));
+
+      console.log("boxwidth 1", boxwidth(itemOneRef.current));
+      console.log("boxwidth 2", boxwidth(itemTwoRef.current));
+      console.log("boxwidth 3", boxwidth(itemThreeRef.current));
+
+      if (
+        boxThreePosition <
+        scrollPosition + triggerOffset
+        //+ positionOffsetThree
+      ) {
+        // if (boxThreePosition < scrollPosition + positionOffsetThree) {
         setShowBox((state) => ({ ...state, itemThree: true }));
+
         // } else if (boxThreePosition < scrollPosition + positionOffset) {
         //   setShowBox((state) => ({ ...state, itemThree: true }));
-      } else if (boxTwoPosition < scrollPosition + positionOffset) {
+      } else if (
+        boxTwoPosition <
+        scrollPosition + triggerOffset
+        //+ positionOffsetTwo
+      ) {
         setShowBox((state) => ({ ...state, itemTwo: true }));
+      } else if (boxOnePosition < scrollPosition + triggerOffset) {
+        setShowBox((state) => ({ ...state, itemOne: true }));
       }
     };
 
@@ -58,6 +104,8 @@ function FrontPage() {
 
   return (
     <div className="front_page">
+      <div id="marker"></div>
+
       <HeroContainer
         logosource={festival ? festival.festival_logo : null}
         // title={festival ? festival.festival_title : null}
@@ -70,7 +118,12 @@ function FrontPage() {
         {/* card wrapper */}
         {/* first card is not animated */}
 
-        <div className="card_wrapper">
+        <div
+          ref={itemOneRef}
+          className={`card_wrapper animatestart${
+            showBox.itemOne ? " triggered" : ""
+          }`}
+        >
           <FrontPageBigCard
             title="Whats On This Year"
             text="What is On This Year then"

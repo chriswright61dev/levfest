@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
+import "./NewsList.css";
 import { MainDataContext } from "../../../data/MainDataContext";
 import NewsCard from "../../../components/Cards/NewsCard/NewsCard";
 function NewsList() {
   const news = useContext(MainDataContext).mainState.newsListData;
-  console.log(news);
+  // console.log(news);
   return (
     <div className="news">
       {news.map((newsitem) => {

@@ -2,28 +2,23 @@
 /* mobile first small*/
 /* main page content container */
 .front_page_data_card_block {
-  /* width: 100%; */
   pointer-events: none;
   display: flex;
   align-items: flex-start;
   pointer-events: none;
-  /* flex-direction: column; */
   background-color: rgba(44, 44, 44, 0.5);
   margin-bottom: 1rem;
-  /* margin-right: 2rem; */
 }
 
 .front_page_data_card_block_text {
   pointer-events: none;
   flex: 1;
   color: white;
-  /* background-color: rgb(190, 141, 75); */
 }
 
 .front_page_data_card_block_image {
   width: 80px;
   height: 80px;
-  /* background-color: yellow; */
   margin: 0.5rem;
 }
 

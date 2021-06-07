@@ -20,6 +20,7 @@ header {
 
   font-size: 0.8rem;
   padding-right: 2rem;
+  flex: 1;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -45,7 +46,9 @@ header {
   /* } */
 
   .header_text {
-    font-size: 3rem;
+    display: flex;
+    font-size: 2rem;
     padding-right: 2rem;
+    justify-content: space-around;
   }
 }
