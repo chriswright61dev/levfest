@@ -43,8 +43,7 @@ function EventDetails(props) {
   // starts as an empty array
   if (eventData.length > 0) {
     // so keep it as an array - has only one element
-
-    const HasEventPassed = hasDatePassed(eventData.event_date);
+    const HasEventPassed = hasDatePassed(eventData[0].event_date_time);
     return <EventDetail old={HasEventPassed} data={eventData[0]} />;
   } else {
     return "loading";

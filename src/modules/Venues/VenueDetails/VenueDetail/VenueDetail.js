@@ -42,23 +42,8 @@ function VenueDetail(props) {
 
           <EventsAtVenue venue_id={vs.id} />
         </div>
-        <div className="venue_images">
-          {vs.venue_gstreet_latitude ? (
-            <GStreetView
-              latitude={vs.venue_gstreet_latitude}
-              longitude={vs.venue_gstreet_longitude}
-              heading={vs.venue_gstreet_heading}
-              pitch={vs.venue_gstreet_pitch}
-            />
-          ) : null}
-          {vs.venue_gmap_latitude ? (
-            <GMap
-              latitude={vs.venue_gmap_latitude}
-              longitude={vs.venue_gmap_longitude}
-              querytext={vs.venue_gmap_query_text}
-            />
-          ) : null}
 
+        <div className="venue_images">
           {vs.venue_image_1 ? (
             <ImageContainer
               source={vs.venue_image_1}
@@ -69,6 +54,23 @@ function VenueDetail(props) {
             <ImageContainer
               source={vs.venue_image_2}
               altText={vs.venue_title}
+            />
+          ) : null}
+
+          {vs.venue_gmap_latitude ? (
+            <GMap
+              latitude={vs.venue_gmap_latitude}
+              longitude={vs.venue_gmap_longitude}
+              querytext={vs.venue_gmap_query_text}
+            />
+          ) : null}
+
+          {vs.venue_gstreet_latitude ? (
+            <GStreetView
+              latitude={vs.venue_gstreet_latitude}
+              longitude={vs.venue_gstreet_longitude}
+              heading={vs.venue_gstreet_heading}
+              pitch={vs.venue_gstreet_pitch}
             />
           ) : null}
         </div>

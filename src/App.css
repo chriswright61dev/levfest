@@ -15,7 +15,7 @@ body {
 /* mobile first small*/
 /* main page content container */
 .content {
-  /* background-color: rgb(245, 236, 188); */
+  background-color: rgb(34, 30, 54, 0.3);
   margin-top: 6rem;
   /* display: flex;
   flex-wrap: wrap; */

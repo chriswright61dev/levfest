@@ -1,3 +1,12 @@
+export function hasDatePassed(date) {
+  let HasEventPassed = false;
+  const now = new Date();
+  if (Date.parse(now) > Date.parse(date)) {
+    HasEventPassed = true;
+  }
+  return HasEventPassed;
+}
+
 export function findIndexInArray(arrayName, objectKeyName, keyValue) {
   // find the index of a key value in an array of objects
   return arrayName
@@ -131,15 +140,6 @@ export function countProperties(obj) {
 export function feedCounter(feedList, dispatch) {
   const feedcount = countProperties(feedList);
   dispatch({ type: "FEEDS_COUNTED", value: feedcount });
-}
-
-export function hasDatePassed(date) {
-  let HasEventPassed = false;
-  const now = new Date();
-  if (Date.parse(now) > Date.parse(date)) {
-    HasEventPassed = true;
-  }
-  return HasEventPassed;
 }
 
 export function DateFormat(dateTimeString) {
