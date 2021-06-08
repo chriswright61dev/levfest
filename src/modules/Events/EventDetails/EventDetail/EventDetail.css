@@ -2,17 +2,19 @@
 /* mobile first small*/
 /* main page content container */
 
-.news_detail {
+.event_detail {
   display: block;
   margin: 1rem;
 }
 
-.news_detail_text {
+.event_detail_text {
   width: 100%;
 }
 
-.news_detail_images {
+.event_detail_images {
   width: 100%;
+  display: block;
+  margin-bottom: 4rem;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -24,16 +26,4 @@
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  .news_detail {
-    display: flex;
-  }
-  .news_detail_text {
-    background: rgb(186, 179, 223);
-    min-width: 50%;
-  }
-
-  .news_detail_images {
-    background: rgb(236, 247, 138);
-    width: 30%;
-  }
 }

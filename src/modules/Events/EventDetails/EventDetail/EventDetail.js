@@ -1,4 +1,5 @@
 import React from "react";
+import "./EventDetail.css";
 import DateTime from "../../../../components/DateTime/DateTime";
 import TimeText from "../../../../components/TimeText/TimeText";
 import ShowYear from "../../../../components/ShowYear/ShowYear";
@@ -11,8 +12,7 @@ function EventDetail(props) {
       <div className="event_detail">
         <div className="event_detail_text">
           <div className="old_event">
-            <p>is it an old event? </p>
-
+            <p>is it an old event? if so make it very clear </p>
             <p> {props.old ? "Yes" : "No"}</p>
           </div>
           <p> title:{es.event_title}</p>
@@ -30,13 +30,41 @@ function EventDetail(props) {
             className="event_body"
             dangerouslySetInnerHTML={{ __html: es.event_body }}
           />
+          <p>end of text</p>
         </div>
 
         <div className="event_detail_images">
-          <ImageContainer source={es.event_poster_original} altText={es.name} />
-          <ImageContainer source={es.event_image_1} altText={es.name} />
-          <ImageContainer source={es.event_image_2} altText={es.name} />
-          <ImageContainer source={es.event_image_3} altText={es.name} />
+          {es.event_poster_original ? (
+            <ImageContainer
+              type="square"
+              source={es.event_poster_original}
+              altText={es.name}
+            />
+          ) : null}
+
+          {es.event_image_1 ? (
+            <ImageContainer
+              type="square"
+              source={es.event_image_1}
+              altText={es.name}
+            />
+          ) : null}
+
+          {es.event_image_2 ? (
+            <ImageContainer
+              type="square"
+              source={es.event_image_2}
+              altText={es.name}
+            />
+          ) : null}
+
+          {es.event_image_3 ? (
+            <ImageContainer
+              type="square"
+              source={es.event_image_3}
+              altText={es.name}
+            />
+          ) : null}
         </div>
       </div>
     );

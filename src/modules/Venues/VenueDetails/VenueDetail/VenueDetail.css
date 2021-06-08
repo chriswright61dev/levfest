@@ -1,20 +1,54 @@
+/* media queries */
+/* mobile first small*/
+/* main page content container */
 .venue {
-  display: flex;
+  display: block;
+  margin: 1rem;
 }
+
 .venue_text {
-  background: rgb(186, 179, 223);
-  width: 30%;
+  width: 100%;
+  /* background: rgb(186, 179, 223); */
 }
 .venue_name {
-  background: rgb(180, 172, 252);
+  width: 100%;
+  /* background: rgb(180, 172, 252); */
 }
 
 .venue_events {
+  width: 100%;
   background: rgb(197, 236, 197);
-  width: 30%;
 }
 
 .venue_images {
-  width: 30%;
+  width: 100%;
   background: rgb(236, 247, 138);
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .venue_text {
+    background: rgb(186, 179, 223);
+    width: 30%;
+  }
+  .venue_name {
+    background: rgb(180, 172, 252);
+  }
+
+  .venue_events {
+    background: rgb(197, 236, 197);
+    width: 30%;
+  }
+
+  .venue_images {
+    width: 30%;
+    background: rgb(236, 247, 138);
+  }
 }

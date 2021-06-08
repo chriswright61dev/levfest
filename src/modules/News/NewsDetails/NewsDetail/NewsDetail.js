@@ -16,10 +16,37 @@ function NewsDetail(props) {
           />
         </div>
         <div className="news_detail_images">
-          <ImageContainer source={ns.news_image_1} altText={ns.news_title} />
-          <ImageContainer source={ns.news_image_2} altText={ns.news_title} />
-          <ImageContainer source={ns.news_image_3} altText={ns.news_title} />
-          <ImageContainer source={ns.news_image_4} altText={ns.news_title} />
+          {ns.news_image_1 ? (
+            <ImageContainer
+              type="square"
+              source={ns.news_image_1}
+              altText={ns.news_title}
+            />
+          ) : null}
+
+          {ns.news_image_2 ? (
+            <ImageContainer
+              type="square"
+              source={ns.news_image_2}
+              altText={ns.news_title}
+            />
+          ) : null}
+
+          {ns.news_image_3 ? (
+            <ImageContainer
+              type="square"
+              source={ns.news_image_3}
+              altText={ns.news_title}
+            />
+          ) : null}
+
+          {ns.news_image_4 ? (
+            <ImageContainer
+              type="square"
+              source={ns.news_image_4}
+              altText={ns.news_title}
+            />
+          ) : null}
         </div>
       </div>
     );
