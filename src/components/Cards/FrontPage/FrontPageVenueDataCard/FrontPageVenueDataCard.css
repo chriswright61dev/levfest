@@ -37,13 +37,4 @@
     display: flex;
     flex-wrap: wrap;
   }
-
-  .front_page_venue_data_card a {
-    color: white;
-    text-decoration: none;
-  }
-
-  .front_page_venue_data_card a:hover {
-    color: yellow;
-  }
 }

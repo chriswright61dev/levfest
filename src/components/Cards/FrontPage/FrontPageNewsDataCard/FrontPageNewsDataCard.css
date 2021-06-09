@@ -22,7 +22,7 @@
 @media (min-width: 1200px) {
   .front_page_news_data_cards {
     width: 42vw;
-    background-color: rgb(240, 149, 235);
+
     flex: 1;
     margin: 1rem;
     display: flex;
@@ -36,14 +36,5 @@
     width: 50vw;
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .front_page_news_data_card a {
-    color: white;
-    text-decoration: none;
-  }
-
-  .front_page_news_data_card a:hover {
-    color: yellow;
   }
 }
