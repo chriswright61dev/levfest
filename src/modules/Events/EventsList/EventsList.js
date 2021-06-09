@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./EventsList.css";
 import { MainDataContext } from "../../../data/MainDataContext";
 import EventCard from "../../../components/Cards/EventCard/EventCard";

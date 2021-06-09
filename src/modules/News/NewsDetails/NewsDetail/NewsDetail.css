@@ -14,14 +14,19 @@
 .news_detail_text h3 {
   width: 100%;
 }
+.news_detail_text p {
+  width: 100%;
+  /* nice line length 45 to 70 chars - lets try 60 */
+  max-width: 60ch;
+  margin-bottom: 1rem;
+}
 
 .news_detail_images {
   width: 100%;
 }
 
 .news_body {
-  /* font-size: 1.2rem; */
-  font-size: clamp(1rem, 10vw, 1.5rem);
+  font-size: 1.2rem;
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -42,8 +47,6 @@
     /* background: rgb(186, 179, 223); */
     /* min-width: 50%; */
 
-    /* nice line length 45 to 70 chars - lets try 60 */
-    max-width: 60ch;
     margin-bottom: 2rem;
   }
 
