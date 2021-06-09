@@ -5,7 +5,14 @@ import "./EventCard.css";
 import DateTime from "../../DateTime/DateTime";
 function EventCard(props) {
   return (
-    //
+    // link
+    // title
+    // id
+    // old
+    // date
+    // venue name text
+    // introduction
+    // venue_id - is this used
 
     <div className="event_card">
       <Link to={`/${props.link}/${props.id}`}>
@@ -28,9 +35,9 @@ function EventCard(props) {
       <div className="event_card__text_bottom">
         <p> {props.venue}</p>
         <p> {props.introduction}</p>
-        <p>
+        {/* <p>
           event id {props.id} venue id {props.venue_id}
-        </p>
+        </p> */}
       </div>
 
       <ImageContainer

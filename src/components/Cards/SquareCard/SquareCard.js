@@ -3,8 +3,13 @@ import "./SquareCard.css";
 import { Link } from "react-router-dom";
 import ImageContainer from "../../ImageContainer/ImageContainer";
 function SquareCard(props) {
+  // title
+  // id
+  // linkBaseName
+  // imageurl
+
   <div className="square_card">
-    <Link to={`/${props.link}/${props.id}`}>
+    <Link to={`/${props.linkBaseName}/${props.id}`}>
       <div className="square_card__text_top">
         <h2> {props.title}</h2>
       </div>

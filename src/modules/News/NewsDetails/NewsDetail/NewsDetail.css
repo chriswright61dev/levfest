@@ -41,7 +41,9 @@
   .news_detail_text p {
     /* background: rgb(186, 179, 223); */
     /* min-width: 50%; */
-    max-width: 70%;
+
+    /* nice line length 45 to 70 chars - lets try 60 */
+    max-width: 60ch;
     margin-bottom: 2rem;
   }
 
