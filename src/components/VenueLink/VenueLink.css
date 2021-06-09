@@ -1,3 +1,10 @@
-.venue_name {
-  background-color: red;
+.venue_link {
+  color: White;
+}
+.venue_link a {
+  color: White;
+}
+
+.venue_link a:hover {
+  color: rgb(245, 234, 133);
 }

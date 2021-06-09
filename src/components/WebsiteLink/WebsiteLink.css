@@ -1,3 +1,13 @@
 .website_link {
-  background-color: yellow;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.website_link a {
+  color: rgb(249, 255, 238);
+  text-decoration: none;
+}
+
+.website_link a:hover {
+  color: rgb(243, 238, 167);
 }

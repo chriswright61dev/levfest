@@ -5,25 +5,17 @@ import "./EventsAtVenue.css";
 
 import EventCard from "../../../components/Cards/EventCard/EventCard";
 function EventsAtVenue(props) {
-  // props about venue
-  // console.log("props", props);
-
   // state about events
   const events = useContext(MainDataContext).mainState.eventsListData;
-  // console.log("events", events);
-
   if (!events) {
-    //   if (events.length === 0) {
     return null;
   } else {
     // filter the data by the venue id
     const venueEvents = events.filter(
       (event) => event.event_venue_id === props.venue_id
     );
-    // console.log("venueEvents", venueEvents);
     return (
       <div className="eventsInVenue">
-        list events here
         {venueEvents.map((event) => {
           return (
             <EventCard

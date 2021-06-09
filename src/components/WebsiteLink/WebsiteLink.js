@@ -3,9 +3,8 @@ import "./WebsiteLink.css";
 function WebsiteLink(props) {
   return (
     <p className="website_link">
-      WebSite:
       <a href={props.source} target="_blank" rel="noopener noreferrer">
-        {props.linkText}
+        WebSite: {props.linkText}
       </a>
     </p>
   );

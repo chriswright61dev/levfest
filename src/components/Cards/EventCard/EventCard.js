@@ -5,14 +5,24 @@ import "./EventCard.css";
 import DateTime from "../../DateTime/DateTime";
 function EventCard(props) {
   return (
+    //
+
     <div className="event_card">
-      <div className="event_card__text_top">
-        <Link to={`/${props.link}/${props.id}`}>
+      <Link to={`/${props.link}/${props.id}`}>
+        {/* <div className="event_card__text_top"> */}
+        <div
+          className={
+            !props.old
+              ? "event_card__text_top"
+              : "event_card__text_top event_old"
+          }
+        >
           <h2> {props.title}</h2>
-        </Link>
-      </div>
+        </div>{" "}
+      </Link>
       <div className="event_card__text_middle">
         <DateTime date={props.date} />
+        {props.old ? <p className="old_event">This is an OLD event</p> : null}
       </div>
 
       <div className="event_card__text_bottom">

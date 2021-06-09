@@ -1,3 +1,13 @@
 .email_link {
-  background-color: yellowgreen;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.email_link a {
+  color: rgb(249, 255, 238);
+  text-decoration: none;
+}
+
+.email_link a:hover {
+  color: rgb(243, 238, 167);
 }

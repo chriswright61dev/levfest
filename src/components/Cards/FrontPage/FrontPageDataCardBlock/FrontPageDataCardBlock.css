@@ -24,6 +24,10 @@
   margin: 0.5rem;
 }
 
+.front_page_data_card_block_image img {
+  border-radius: 50%;
+}
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 }

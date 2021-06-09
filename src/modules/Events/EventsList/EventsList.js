@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./EventsList.css";
 import { MainDataContext } from "../../../data/MainDataContext";
 import EventCard from "../../../components/Cards/EventCard/EventCard";
-
+import { hasDatePassed } from "../../../utilities/utilities";
 function EventsList() {
   const events = useContext(MainDataContext).mainState.eventsListData;
   if (!events) {
@@ -14,6 +14,7 @@ function EventsList() {
         {events.map((event) => {
           return (
             <EventCard
+              old={hasDatePassed(event.event_date_time)}
               key={event.id}
               id={event.id}
               link={"events"}

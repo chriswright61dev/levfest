@@ -19,26 +19,40 @@ function VenueDetail(props) {
     return (
       <div className="venue">
         <div className="venue_text">
+          <div className="venue_small_image">
+            {vs.venue_image_1 ? (
+              <ImageContainer
+                source={vs.venue_image_1}
+                altText={vs.venue_title}
+              />
+            ) : null}
+          </div>
           <h3 className="venue_name">{vs.venue_title}​</h3>
-          <p> Venue id {vs.id}​</p>
-          {vs.venue_address_1 ? <p>{vs.venue_address_1}</p> : null}
-          {vs.venue_address_2 ? <p>{vs.venue_address_2}</p> : null}
-          {vs.venue_address_3 ? <p>{vs.venue_address_3}</p> : null}
-          {vs.venue_address_4 ? <p>{vs.venue_address_4}</p> : null}
+          {/* <p> Venue id {vs.id}​</p> */}
+          <address>
+            {vs.venue_address_1 ? <p>{vs.venue_address_1}</p> : null}
+            {vs.venue_address_2 ? <p>{vs.venue_address_2}</p> : null}
+            {vs.venue_address_3 ? <p>{vs.venue_address_3}</p> : null}
+            {vs.venue_address_4 ? <p>{vs.venue_address_4}</p> : null}
+            <hr />
+            {vs.venue_telephone ? <p>{vs.venue_telephone}</p> : null}
+
+            {vs.venue_website ? (
+              <EmailLink source={vs.venue_email} linkText={vs.venue_title} />
+            ) : null}
+
+            {vs.venue_website ? (
+              <WebsiteLink
+                source={vs.venue_website}
+                linkText={vs.venue_title}
+              />
+            ) : null}
+          </address>
 
           {vs.venue_introduction ? <p>{vs.venue_introduction}</p> : null}
-          {vs.venue_telephone ? <p>{vs.venue_telephone}</p> : null}
-
-          {vs.venue_website ? (
-            <EmailLink source={vs.venue_email} linkText={vs.venue_title} />
-          ) : null}
-
-          {vs.venue_website ? (
-            <WebsiteLink source={vs.venue_website} linkText={vs.venue_title} />
-          ) : null}
         </div>
         <div className="venue_events">
-          <h4>Events at {vs.venue_title}</h4>
+          {/* <h4>Events at {vs.venue_title}</h4> */}
 
           <EventsAtVenue venue_id={vs.id} />
         </div>

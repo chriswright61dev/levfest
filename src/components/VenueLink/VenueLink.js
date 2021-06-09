@@ -4,7 +4,7 @@ import "./VenueLink.css";
 function VenueLink(props) {
   return (
     <Link to={`/venues/${props.venue_id}`}>
-      <h4 className="venue_name"> at {props.venue_name}</h4>
+      <h3 className="venue_link"> at {props.venue_name}</h3>
     </Link>
   );
 }
