@@ -8,13 +8,13 @@ function NewsDetail(props) {
     return (
       <div className="news_detail">
         <div className="news_detail_text">
-          <p> title:{ns.news_title}</p>
-
+          <h3>{ns.news_title}</h3>
           <div
             className="news_body"
             dangerouslySetInnerHTML={{ __html: ns.news_body }}
           />
         </div>
+
         <div className="news_detail_images">
           {ns.news_image_1 ? (
             <ImageContainer
