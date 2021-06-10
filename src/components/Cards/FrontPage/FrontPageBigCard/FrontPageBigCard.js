@@ -5,7 +5,7 @@ import ImageContainer from "../../../ImageContainer/ImageContainer";
 function FrontPageBigCard(props) {
   // console.log(props);
   return (
-    <div className="front_page_big_card">
+    <div className="front_page_big_card box_drop_shadow">
       <div className="front_page_big_card__text_top">
         <h2>{props.title}</h2>
       </div>

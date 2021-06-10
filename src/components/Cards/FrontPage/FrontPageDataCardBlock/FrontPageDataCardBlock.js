@@ -7,7 +7,7 @@ function FrontPageDataCardBlock(props) {
   return (
     <Link to={`/${props.link}/${props.id}`}>
       <div className="front_page_data_card_block">
-        <div className="front_page_data_card_block_image">
+        <div className="front_page_data_card_block_image box_drop_shadow">
           <ImageContainer
             type="square"
             source={props.image}
