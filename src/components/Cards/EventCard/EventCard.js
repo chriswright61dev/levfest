@@ -28,8 +28,11 @@ function EventCard(props) {
         </div>{" "}
       </Link>
       <div className="event_card__text_middle">
-        <DateTime date={props.date} />
-        {props.old ? <p className="old_event">This is an OLD event</p> : null}
+        {props.old ? (
+          <p className="an_old_event">This is an OLD event</p>
+        ) : (
+          <DateTime date={props.date} />
+        )}
       </div>
 
       <div className="event_card__text_bottom">

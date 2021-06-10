@@ -16,7 +16,8 @@ body {
 /* mobile first small*/
 /* main page content container */
 .content {
-  background-color: rgb(34, 30, 54, 0.3);
+  /* background-color: rgb(34, 30, 54, 0.3); */
+  background-color: rgba(69, 95, 145, 0.5);
   margin-top: 6rem;
   color: var(--text_light_color);
   min-height: 100vh;

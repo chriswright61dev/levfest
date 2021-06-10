@@ -21,6 +21,12 @@
   z-index: 5;
 }
 
+.an_old_event {
+  margin: 1rem;
+  font-weight: 600;
+  color: var(--old_event_text);
+}
+
 .event_old {
   background-color: var(--old_event_bg_overlay);
 }
