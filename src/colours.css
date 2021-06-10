@@ -1,5 +1,7 @@
 :root {
   --bg_overlay_color: rgba(42, 38, 61, 0.3);
+  --old_event_bg: rgba(126, 42, 42, 0.8);
+  --old_event_text: rgba(243, 255, 134, 0.8);
   --old_event_bg_overlay: rgba(48, 48, 48, 0.8);
   --old_event_dehighlight: rgb(170, 170, 170);
   --text_dark_color: rgb(15, 15, 15);

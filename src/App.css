@@ -31,9 +31,14 @@ body {
   color: yellow;
 }
 
+p {
+  /* nice line length 45 to 70 chars - lets try 60 */
+  max-width: 60ch;
+}
+
+h1,
 h2,
-h3,
-h4 {
+h3 {
   text-shadow: 1px 1px 6px rgba(50, 50, 50, 0.6);
   filter: drop-shadow(4px 4px 6px rgba(39, 39, 39, 0.3));
 }
@@ -41,10 +46,25 @@ h4 {
 p {
   text-shadow: 1px 1px 4px #000;
   filter: drop-shadow(4px 4px 6px rgba(39, 39, 39, 0.5));
+  padding-bottom: 1rem;
 }
 
 .box_drop_shadow {
   filter: drop-shadow(6px 6px 6px rgba(39, 39, 39, 0.3));
+}
+
+.page_h1 {
+  text-align: center;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.admission {
+  font-weight: 600;
+  font-size: 1.2rem;
+  /* background-color: red; */
+  color: yellow;
 }
 
 /* Medium devices (tablets, 768px and up) */

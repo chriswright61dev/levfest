@@ -5,6 +5,7 @@ function Venues() {
   return (
     <div className="content">
       <Pagetop />
+      <h1 className="page_h1">Levenshulme Festival Venues</h1>
       <VenueList />
     </div>
   );

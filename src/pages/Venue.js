@@ -6,6 +6,7 @@ function Venue() {
     <div className="content">
       <div className="container">
         <Pagetop />
+        <h1 className="page_h1">A Levenshulme Festival Venue</h1>
         <VenueDetails />
       </div>
 

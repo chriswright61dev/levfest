@@ -26,4 +26,31 @@
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .event_detail {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .event_detail_text {
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .event_body {
+    margin-bottom: 4rem;
+  }
+
+  .event_detail_images {
+    flex-shrink: 2;
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; */
+  }
+
+  .event_detail_images .square {
+    /* flex-grow: 1; */
+  }
 }

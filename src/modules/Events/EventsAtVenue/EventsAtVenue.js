@@ -19,8 +19,8 @@ function EventsAtVenue(props) {
         {venueEvents.map((event) => {
           return (
             <EventCard
-              key={event.event_id}
-              id={event.event_id}
+              key={event.id}
+              id={event.id}
               link={"events"}
               title={event.event_title}
               name={event.event_name}

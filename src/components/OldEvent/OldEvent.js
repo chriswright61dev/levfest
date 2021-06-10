@@ -5,8 +5,11 @@ import ShowMonth from "../ShowMonth/ShowMonth";
 function OldEvent(props) {
   return (
     <div className="old_event">
-      This is an OLD event from <ShowMonth date={props.date} />{" "}
-      <ShowYear date={props.date} />
+      <p>
+        {" "}
+        This is an OLD event from <ShowMonth date={props.date} />{" "}
+        <ShowYear date={props.date} />
+      </p>
     </div>
   );
 }

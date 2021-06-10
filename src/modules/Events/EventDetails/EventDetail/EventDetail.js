@@ -12,21 +12,18 @@ function EventDetail(props) {
     return (
       <div className="event_detail">
         <div className="event_detail_text">
+          <h2>{es.event_title}</h2>
+          <DateTime date={es.event_date_time} />
+          <VenueLink venue_name={es.event_venue} venue_id={es.event_venue_id} />
+          {es.event_admission ? (
+            <p className="admission">Admission: {es.event_admission} </p>
+          ) : null}
           {/* is it an old event? if so make it very clear  */}
           {props.old ? <OldEvent date={es.event_date_time} /> : null}
-
-          <p> title:{es.event_title}</p>
-          {/* <p> name:{es.event_name} - this is redundant</p> */}
-          {/* <p> event id:{es.id}</p> */}
-
-          <DateTime date={es.event_date_time} />
-
-          <p> introduction:{es.event_introduction}</p>
-          <TimeText timeText={es.event_time_text} />
+          <p>{es.event_introduction}</p>
+          {/* <TimeText timeText={es.event_time_text} /> */}
           {/* time from text field not date */}
-          {es.event_admission ? <p>Admission: {es.event_admission} </p> : null}
 
-          <VenueLink venue_name={es.event_venue} venue_id={es.event_venue_id} />
           <div
             className="event_body"
             dangerouslySetInnerHTML={{ __html: es.event_body }}

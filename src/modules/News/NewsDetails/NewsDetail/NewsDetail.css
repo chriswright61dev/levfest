@@ -16,8 +16,6 @@
 }
 .news_detail_text p {
   width: 100%;
-  /* nice line length 45 to 70 chars - lets try 60 */
-  max-width: 60ch;
   margin-bottom: 1rem;
 }
 
