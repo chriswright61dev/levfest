@@ -1,9 +1,6 @@
 import React, { createContext, useEffect, useReducer } from "react";
-import {
-  feedCounter,
-  fetchListData,
-  indexOfYearData,
-} from "../utilities/utilities";
+import { feedCounter, indexOfYearData } from "../utilities/utilities";
+import { fetchListData } from "../utilities/getData";
 
 export const MainDataContext = createContext();
 

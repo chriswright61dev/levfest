@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MainDataContext } from "../../../data/MainDataContext";
 import {
-  fetchSingleData,
+  // fetchSingleData,
   isParameterUsed,
   getExistingData,
   hasDatePassed,
 } from "../../../utilities/utilities";
+import { fetchSingleData } from "../../../utilities/getData";
 import { useParams } from "react-router-dom";
 import EventDetail from "./EventDetail/EventDetail.js";
 

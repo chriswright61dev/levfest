@@ -2,10 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import EventsOldListDisplay from "./EventsOldListDisplay/EventsOldListDisplay";
 
 import { MainDataContext } from "../../../data/MainDataContext";
-import {
-  indexOfYearData,
-  fetchOldListData,
-} from "../../../utilities/utilities";
+import { indexOfYearData } from "../../../utilities/utilities";
+
+import { fetchOldListData } from "../../../utilities/getData";
 
 function EventsOldList() {
   // listing data from previous years
