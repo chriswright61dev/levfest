@@ -14,7 +14,7 @@ function VenueDetails(props) {
     displayData: [],
   });
 
-  const baseUrl = "http://www.levenshulmecommunityfestival.co.uk/";
+  const baseUrl = "https://www.levenshulmecommunityfestival.co.uk/";
   const apiUrl = "api_venues_long?venue_id=";
   const longVenueData = useContext(MainDataContext).mainState.venuesLongData;
   const dispatcher = useContext(MainDataContext).dispatch;

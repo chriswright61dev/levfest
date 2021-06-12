@@ -14,7 +14,7 @@ function NewsDetails(props) {
     displayData: [],
   });
 
-  const baseUrl = "http://www.levenshulmecommunityfestival.co.uk/";
+  const baseUrl = "https://www.levenshulmecommunityfestival.co.uk/";
   const apiUrl = "api_news_long?news_id=";
   const longNewsData = useContext(MainDataContext).mainState.newsLongData;
   const dispatcher = useContext(MainDataContext).dispatch;

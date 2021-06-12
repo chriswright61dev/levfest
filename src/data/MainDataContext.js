@@ -9,16 +9,16 @@ const thisyear = new Date().getFullYear();
 const mainApiListsURLs = {
   // api urls object
   festival:
-    "http://www.levenshulmecommunityfestival.co.uk/api_levfest_basic_data",
+    "https://www.levenshulmecommunityfestival.co.uk/api_levfest_basic_data",
 
   venuesList:
-    "http://www.levenshulmecommunityfestival.co.uk/api_levfest_venues_list ",
+    "https://www.levenshulmecommunityfestival.co.uk/api_levfest_venues_list ",
   eventsList:
-    "http://www.levenshulmecommunityfestival.co.uk/api_levfest_events_list/" +
+    "https://www.levenshulmecommunityfestival.co.uk/api_levfest_events_list/" +
     thisyear,
 
   newsList:
-    "http://www.levenshulmecommunityfestival.co.uk/api_levfest_news_list",
+    "https://www.levenshulmecommunityfestival.co.uk/api_levfest_news_list",
 };
 
 function MainDataContextProvider(props) {
