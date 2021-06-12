@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/chriswright61dev/levfest/static/css/main.c406e5d2.chunk.css",
+    "main.js": "/chriswright61dev/levfest/static/js/main.a29cad50.chunk.js",
+    "main.js.map": "/chriswright61dev/levfest/static/js/main.a29cad50.chunk.js.map",
+    "runtime-main.js": "/chriswright61dev/levfest/static/js/runtime-main.85eedc82.js",
+    "runtime-main.js.map": "/chriswright61dev/levfest/static/js/runtime-main.85eedc82.js.map",
+    "static/js/2.c794769a.chunk.js": "/chriswright61dev/levfest/static/js/2.c794769a.chunk.js",
+    "static/js/2.c794769a.chunk.js.map": "/chriswright61dev/levfest/static/js/2.c794769a.chunk.js.map",
+    "index.html": "/chriswright61dev/levfest/index.html",
+    "static/css/main.c406e5d2.chunk.css.map": "/chriswright61dev/levfest/static/css/main.c406e5d2.chunk.css.map",
+    "static/js/2.c794769a.chunk.js.LICENSE.txt": "/chriswright61dev/levfest/static/js/2.c794769a.chunk.js.LICENSE.txt",
+    "static/media/hero1.a502dca4.jpg": "/chriswright61dev/levfest/static/media/hero1.a502dca4.jpg",
+    "static/media/App.css": "/chriswright61dev/levfest/static/media/pagebg.cbe69f97.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.85eedc82.js",
+    "static/js/2.c794769a.chunk.js",
+    "static/css/main.c406e5d2.chunk.css",
+    "static/js/main.a29cad50.chunk.js"
+  ]
+}
