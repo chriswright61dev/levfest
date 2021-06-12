@@ -23,12 +23,14 @@ const mainApiListsURLs = {
 
 function MainDataContextProvider(props) {
   const initialState = {
+    // am I using any of this?
     festivalLoaded: false,
     venuesListLoaded: false,
     eventsListLoaded: false,
     newsListLoaded: false,
     feedsCount: 0,
     loadCount: 0,
+
     festivalData: [],
     venuesListData: [],
     venuesLongData: [],
@@ -91,7 +93,8 @@ function MainDataContextProvider(props) {
       }
 
       case "ADD_FESTIVAL_DATA": {
-        return { ...mainState, festivalData: action.value };
+        // its an array but only 1 set of data
+        return { ...mainState, festivalData: action.value[0] };
       }
 
       case "ADD_NEWS_LIST_DATA": {
@@ -106,16 +109,18 @@ function MainDataContextProvider(props) {
       }
 
       case "ADD_NEWS_DATA": {
-        const newsdata = mainState.newsLongData;
+        const existingData = mainState.newsLongData;
         const newData = action.value;
-        const used = newsdata.some((news) => news["id"] === newData.id);
+        // if we don't check that the data exists
+        // then it gets added three times
+        const used = existingData.some((news) => news["id"] === newData.id);
         if (used) {
           // already exists so don't add data
           return { ...mainState };
         } else {
           // add data
-          newsdata.push(action.value);
-          return { ...mainState, newsLongData: newsdata };
+          existingData.push(action.value);
+          return { ...mainState, newsLongData: existingData };
         }
       }
 

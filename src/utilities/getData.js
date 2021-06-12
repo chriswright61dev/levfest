@@ -1,3 +1,25 @@
+// get lists data summaries
+export async function fetchListData(dataName, urlList, dispatch) {
+  const url = urlList[dataName]; // key in the api list object
+  let correctedDataName = dataName.split(/(?=[A-Z])/).join("_");
+  const dispatchDataName = "ADD_" + correctedDataName.toUpperCase() + "_DATA";
+  const dispatchLoadedName = correctedDataName.toUpperCase() + "_DATA_LOADED";
+
+  try {
+    const response = await fetch(url);
+    if (response.ok) {
+      const loadedData = await response.json();
+      dispatch({ type: dispatchDataName, value: loadedData });
+      dispatch({ type: dispatchLoadedName });
+    } else {
+      throw new Error("Something went wrong");
+    }
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+// get single set of data details
 export async function fetchSingleData(parametersObject) {
   try {
     const response = await fetch(parametersObject.url);
@@ -12,26 +34,6 @@ export async function fetchSingleData(parametersObject) {
       parametersObject.setState({
         displayData: loadedData,
       });
-    } else {
-      throw new Error("Something went wrong");
-    }
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-export async function fetchListData(dataName, urlList, dispatch) {
-  const url = urlList[dataName]; // key in the api list object
-  let correctedDataName = dataName.split(/(?=[A-Z])/).join("_");
-  const dispatchDataName = "ADD_" + correctedDataName.toUpperCase() + "_DATA";
-  const dispatchLoadedName = correctedDataName.toUpperCase() + "_DATA_LOADED";
-
-  try {
-    const response = await fetch(url);
-    if (response.ok) {
-      const loadedData = await response.json();
-      dispatch({ type: dispatchDataName, value: loadedData });
-      dispatch({ type: dispatchLoadedName });
     } else {
       throw new Error("Something went wrong");
     }

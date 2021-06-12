@@ -12,7 +12,7 @@ import FrontPageNewsDataCard from "../../components/Cards/FrontPage/FrontPageNew
 import FrontPageVenueDataCard from "../../components/Cards/FrontPage/FrontPageVenueDataCard/FrontPageVenueDataCard";
 
 function FrontPage() {
-  const festival = useContext(MainDataContext).mainState.festivalData[0];
+  const festival = useContext(MainDataContext).mainState.festivalData;
 
   // scroll animation stuff
   // removed box four - old events

@@ -13,21 +13,22 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
   .front_page_event_data_cards {
-    width: 42vw;
+    width: 50vw;
     /* background-color: rgb(240, 149, 235); */
     flex: 1;
-    margin: 1rem;
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+    flex-direction: column;
+  }
+
+  .front_page_event_data_card {
+    /* background-color: yellow; */
+
+    width: 50vw;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
   }
 
   .front_page_data_card_block_image {
@@ -43,6 +44,21 @@
     flex: 1;
     /* background-color: rgb(190, 141, 75); */
   }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .front_page_event_data_cards {
+    width: 42vw;
+    /* background-color: rgb(240, 149, 235); */
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 
   .front_page_event_data_card {
     /* background-color: yellow; */
@@ -50,5 +66,19 @@
     width: 50vw;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .front_page_data_card_block_image {
+    width: 125px;
+    height: 125px;
+    /* background-color: yellow; */
+    margin: 1.5rem;
+  }
+
+  .front_page_data_card_block_text {
+    height: 150px;
+    overflow: hidden;
+    flex: 1;
+    /* background-color: rgb(190, 141, 75); */
   }
 }

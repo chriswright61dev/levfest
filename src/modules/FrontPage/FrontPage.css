@@ -46,6 +46,25 @@
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  .front_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .front_page__cards {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .card_wrapper {
+    flex-direction: row;
+    display: flex;
+    /* border: 1px solid; */
+    margin-bottom: 4rem;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */

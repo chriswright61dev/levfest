@@ -5,7 +5,7 @@ import HeaderLogo from "./HeaderLogo/HeaderLogo";
 import { MainDataContext } from "../../data/MainDataContext";
 
 function Header() {
-  const festival = useContext(MainDataContext).mainState.festivalData[0];
+  const festival = useContext(MainDataContext).mainState.festivalData;
   return (
     <header>
       <HeaderLogo logosource={festival ? festival.festival_logo : null} />
