@@ -8,7 +8,7 @@ import {
 import { fetchSingleData } from "../../../utilities/getData";
 import { useParams } from "react-router-dom";
 import VenueDetail from "./VenueDetail/VenueDetail";
-
+import Loader from "../../../components/Loader/Loader";
 function VenueDetails(props) {
   const [venueState, setVenueState] = useState({
     displayData: [],
@@ -46,7 +46,7 @@ function VenueDetails(props) {
   if (venueData.length > 0) {
     return <VenueDetail data={venueData[0]} />;
   } else {
-    return "loading";
+    return <Loader />;
   }
 }
 

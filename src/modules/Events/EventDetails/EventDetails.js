@@ -9,6 +9,7 @@ import {
 import { fetchSingleData } from "../../../utilities/getData";
 import { useParams } from "react-router-dom";
 import EventDetail from "./EventDetail/EventDetail.js";
+import Loader from "../../../components/Loader/Loader";
 
 function EventDetails(props) {
   const [eventState, setEventState] = useState({
@@ -47,7 +48,7 @@ function EventDetails(props) {
     const HasEventPassed = hasDatePassed(eventData[0].event_date_time);
     return <EventDetail old={HasEventPassed} data={eventData[0]} />;
   } else {
-    return "loading";
+    return <Loader />;
   }
 }
 

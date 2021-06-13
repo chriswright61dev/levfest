@@ -8,7 +8,7 @@ import {
 import { fetchSingleData } from "../../../utilities/getData";
 import { useParams } from "react-router-dom";
 import NewsDetail from "./NewsDetail/NewsDetail";
-
+import Loader from "../../../components/Loader/Loader";
 function NewsDetails(props) {
   const [newsState, setNewsState] = useState({
     displayData: [],
@@ -46,7 +46,7 @@ function NewsDetails(props) {
   if (newsData.length > 0) {
     return <NewsDetail data={newsData[0]} />;
   } else {
-    return "loading";
+    return <Loader />;
   }
 }
 

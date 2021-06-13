@@ -3,11 +3,13 @@ import "./EventsList.css";
 import { MainDataContext } from "../../../data/MainDataContext";
 import EventCard from "../../../components/Cards/EventCard/EventCard";
 import { hasDatePassed } from "../../../utilities/utilities";
+import Loader from "../../../components/Loader/Loader";
 function EventsList() {
   const events = useContext(MainDataContext).mainState.eventsListData;
   if (!events) {
     //   if (events.length === 0) {
-    return null;
+    // return null;
+    return <Loader />;
   } else {
     return (
       <div className="events">

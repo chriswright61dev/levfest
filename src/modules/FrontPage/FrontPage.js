@@ -10,7 +10,7 @@ import FrontPageBigCard from "../../components/Cards/FrontPage/FrontPageBigCard/
 import FrontPageEventDataCard from "../../components/Cards/FrontPage/FrontPageEventDataCard/FrontPageEventDataCard";
 import FrontPageNewsDataCard from "../../components/Cards/FrontPage/FrontPageNewsDataCard/FrontPageNewsDataCard";
 import FrontPageVenueDataCard from "../../components/Cards/FrontPage/FrontPageVenueDataCard/FrontPageVenueDataCard";
-
+// import Loader from "../../components/Loader/Loader";
 function FrontPage() {
   const festival = useContext(MainDataContext).mainState.festivalData;
 

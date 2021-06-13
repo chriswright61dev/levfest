@@ -10,10 +10,10 @@ function Venue() {
         <VenueDetails />
       </div>
 
-      <aside>
+      {/* <aside>
         <h4>Other Venues</h4>
         add a list of other venues for quick switching?
-      </aside>
+      </aside> */}
     </div>
   );
 }

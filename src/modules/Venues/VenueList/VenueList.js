@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { MainDataContext } from "../../../data/MainDataContext";
 import VenueCard from "../../../components/Cards/VenueCard/VenueCard";
+import Loader from "../../../components/Loader/Loader";
 import "./VenueList.css";
 function VenueList() {
   const venues = useContext(MainDataContext).mainState.venuesListData;
 
   if (venues.length === 0) {
-    return null;
+    return <Loader />;
   } else {
     return (
       <div className="venues">
