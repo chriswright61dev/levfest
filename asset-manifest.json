@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/levfest/static/css/main.a17faadf.chunk.css",
-    "main.js": "/levfest/static/js/main.2737eab7.chunk.js",
-    "main.js.map": "/levfest/static/js/main.2737eab7.chunk.js.map",
+    "main.js": "/levfest/static/js/main.edb77f1a.chunk.js",
+    "main.js.map": "/levfest/static/js/main.edb77f1a.chunk.js.map",
     "runtime-main.js": "/levfest/static/js/runtime-main.e472dd8f.js",
     "runtime-main.js.map": "/levfest/static/js/runtime-main.e472dd8f.js.map",
     "static/js/2.c794769a.chunk.js": "/levfest/static/js/2.c794769a.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e472dd8f.js",
     "static/js/2.c794769a.chunk.js",
     "static/css/main.a17faadf.chunk.css",
-    "static/js/main.2737eab7.chunk.js"
+    "static/js/main.edb77f1a.chunk.js"
   ]
 }
