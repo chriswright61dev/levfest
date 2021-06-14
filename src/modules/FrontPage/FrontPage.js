@@ -1,8 +1,5 @@
 import React, { useLayoutEffect, useRef, useState, useContext } from "react";
 import { MainDataContext } from "../../data/MainDataContext";
-// import svglogo from "../../images/levfestlogo.svg";
-
-// import boxbg from "../../images/boxbg.jpg";
 import herobg from "../../images/hero1.jpg";
 import "./FrontPage.css";
 import HeroContainer from "../../components/HeroContainer/HeroContainer";
@@ -79,8 +76,6 @@ function FrontPage() {
 
   return (
     <div className="front_page">
-      {/* <div id="marker"></div> */}
-
       <HeroContainer
         logosource={festival ? festival.festival_logo : null}
         // title={festival ? festival.festival_title : null}

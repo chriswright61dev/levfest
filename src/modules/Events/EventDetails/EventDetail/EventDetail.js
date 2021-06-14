@@ -1,7 +1,7 @@
 import React from "react";
 import "./EventDetail.css";
 import DateTime from "../../../../components/DateTime/DateTime";
-import TimeText from "../../../../components/TimeText/TimeText";
+// import TimeText from "../../../../components/TimeText/TimeText";
 // import ShowYear from "../../../../components/ShowYear/ShowYear";
 import VenueLink from "../../../../components/VenueLink/VenueLink";
 import OldEvent from "../../../../components/OldEvent/OldEvent";

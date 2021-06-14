@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <MainDataContext>
-        <Router>
+        <Router basename={"levfest"}>
           <Header />
           <Switch>
             <Route path="/" exact>
