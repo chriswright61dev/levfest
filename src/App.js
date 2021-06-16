@@ -1,8 +1,8 @@
 import "./App.css";
 import "./colours.css";
 import MainDataContext from "./data/MainDataContext";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-// import { HashRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 // for github pages
 
 import Header from "./components/Header/Header";

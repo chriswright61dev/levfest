@@ -71,7 +71,8 @@
     display: flex;
     /* background-color: rgb(44, 44, 44, 0.5); */
 
-    width: 35vw;
+    /* width: 35vw; */
+    width: 20vw;
     padding: 0.5rem;
     margin-right: 0.5rem;
   }
