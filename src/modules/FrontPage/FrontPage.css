@@ -24,16 +24,34 @@
 }
 
 .animatestart {
+  /* background-color: blue; */
   position: relative;
   left: -100vw;
 }
 
 .triggered {
-  /* background-color: red; */
+  background-color: red;
+  /* width: 100vw; */
   transform: translateX(100vw);
+  /* transform: translateX(0vw); */
   transition-property: transform;
-  transition-duration: 0.3s;
+  /* transition-duration: 0.3s; */
+  transition-duration: 0.4s;
+  /* transition-delay: 0.2s; */
   transition-delay: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+.untriggered {
+  /* background-color: rgb(226, 198, 41); */
+  padding-right: 1600px;
+  /* width: 100vw; */
+  transform: translateX(0vw);
+  transition-property: transform;
+  /* transition-duration: 0.3s; */
+  transition-duration: 1s;
+  /* transition-delay: 0.2s; */
+  transition-delay: 1s;
   transition-timing-function: ease-out;
 }
 
@@ -42,6 +60,7 @@
 
   display: flex;
   flex-direction: column;
+  /* justify-content: flex-start; */
 }
 
 /* Medium devices (tablets, 768px and up) */

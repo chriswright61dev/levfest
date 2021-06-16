@@ -195,15 +195,15 @@ function MainDataContextProvider(props) {
   }, []);
 
   useEffect(() => {
-    fetchListData("venuesList", mainApiListsURLs, dispatch);
-  }, []);
-
-  useEffect(() => {
     fetchListData("eventsList", mainApiListsURLs, dispatch);
   }, []);
 
   useEffect(() => {
     fetchListData("newsList", mainApiListsURLs, dispatch);
+  }, []);
+
+  useEffect(() => {
+    fetchListData("venuesList", mainApiListsURLs, dispatch);
   }, []);
 
   return (
