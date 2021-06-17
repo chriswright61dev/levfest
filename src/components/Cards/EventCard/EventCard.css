@@ -35,6 +35,10 @@
   font-weight: 900;
   margin: 1rem;
 }
+.event_card__text_top p {
+  font-weight: 400;
+  margin: 1rem;
+}
 
 .event_old h2 {
   color: var(--old_event_dehighlight);

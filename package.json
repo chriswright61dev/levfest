@@ -1,6 +1,5 @@
 {
   "name": "levfestapi",
-  "homepage": "https://chriswright61dev.github.io/levfest",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

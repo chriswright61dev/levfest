@@ -5,18 +5,8 @@ import "./EventCard.css";
 import DateTime from "../../DateTime/DateTime";
 function EventCard(props) {
   return (
-    // link
-    // title
-    // id
-    // old
-    // date
-    // venue name text
-    // introduction
-    // venue_id - is this used
-
     <div className="event_card">
       <Link to={`/${props.link}/${props.id}`}>
-        {/* <div className="event_card__text_top"> */}
         <div
           className={
             !props.old
@@ -25,6 +15,7 @@ function EventCard(props) {
           }
         >
           <h2> {props.title}</h2>
+          <p>at {props.venue}</p>
         </div>{" "}
       </Link>
       <div className="event_card__text_middle">
@@ -36,7 +27,6 @@ function EventCard(props) {
       </div>
 
       <div className="event_card__text_bottom">
-        <p> {props.venue}</p>
         <p> {props.introduction}</p>
         {/* <p>
           event id {props.id} venue id {props.venue_id}

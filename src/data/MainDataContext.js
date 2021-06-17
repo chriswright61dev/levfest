@@ -186,6 +186,10 @@ function MainDataContextProvider(props) {
     }
   }
 
+  // if one of the promises inside a Promise.all reject,
+  // the function will throw - no access to the resolved promises
+  // leave as is - seperate
+
   useEffect(() => {
     feedCounter(mainApiListsURLs, dispatch);
   }, []);
